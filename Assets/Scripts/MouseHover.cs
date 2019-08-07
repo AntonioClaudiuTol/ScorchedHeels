@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseHover : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class MouseHover : MonoBehaviour
     void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = Color.black;
+    }
+
+    private void OnMouseUp()
+    {
+        SceneManager.LoadScene("LoadingScreen");
     }
 
     // Update is called once per frame
