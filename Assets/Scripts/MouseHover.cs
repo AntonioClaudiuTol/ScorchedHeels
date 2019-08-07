@@ -20,15 +20,4 @@ public class MouseHover : MonoBehaviour
     {
         GetComponent<Renderer>().material.color = Color.black;
     }
-
-    private void OnMouseUp()
-    {
-        SceneManager.LoadScene("LoadingScreen");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

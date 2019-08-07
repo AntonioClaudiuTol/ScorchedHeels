@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111478746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.59, y: -10.83, z: -0.29}
+  m_LocalPosition: {x: -4, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 669256102}
@@ -247,6 +247,8 @@ GameObject:
   - component: {fileID: 669256103}
   - component: {fileID: 669256106}
   - component: {fileID: 669256105}
+  - component: {fileID: 669256108}
+  - component: {fileID: 669256107}
   m_Layer: 0
   m_Name: Quit
   m_TagString: Untagged
@@ -352,6 +354,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bef06c8332663a45aa33b0e4547aa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &669256107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669256101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bef06c8332663a45aa33b0e4547aa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &669256108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669256101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf49d0c8f41fa942a11811bcaf86778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1534097497
@@ -563,7 +589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899614161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.87, y: 2.63, z: 1.19}
+  m_LocalPosition: {x: -4, y: 2, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2052580279}
@@ -583,6 +609,7 @@ GameObject:
   - component: {fileID: 2052580280}
   - component: {fileID: 2052580283}
   - component: {fileID: 2052580282}
+  - component: {fileID: 2052580284}
   m_Layer: 0
   m_Name: Start Game
   m_TagString: Untagged
@@ -688,5 +715,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bef06c8332663a45aa33b0e4547aa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2052580284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052580278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0f738102e6d904496ae44c8105dd0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
