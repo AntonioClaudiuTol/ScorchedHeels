@@ -9,6 +9,7 @@ using UnityEditor;
 public class PlayerProgress: MonoBehaviour
 {
     public Text progressText;
+    public Image spearImage;
     private int counter = 0;
     private WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
     private Coroutine progressCoroutine;
@@ -25,7 +26,6 @@ public class PlayerProgress: MonoBehaviour
     private Button button;
     private String plot1 = "You wake up with a skullsplitting headache. Your vision is blurry and you have no idea where you are. Wait a minute, you don't even know WHO you are.";
     private string plot2 = "You find yourself in a forest glade. It's morning and the sun bathes you in its warm light. Birds chirp nearby, insects buzz and your stomach growls. It's time to get your bearings!";
-    private GUIStyle guiStyle;
     private bool created = false;
     private bool hasSeenIntro = false;
     private String location;
@@ -53,7 +53,6 @@ public class PlayerProgress: MonoBehaviour
 
     void Start()
     {
-        guiStyle.wordWrap = true;
         //encounters = new list<gameobject>();
         //gameobject[] gos = (gameobject[])resources.findobjectsoftypeall(typeof(gameobject));
         //for (int i = 0; i < gos.length; i++)
@@ -69,58 +68,61 @@ public class PlayerProgress: MonoBehaviour
 
     void Update()
     {
-        
+        if(rock > 0 && branch > 0)
+        {
+            spearImage.enabled = true;
+        }
     }
 
-    void OnGUI()
-    {
-        if(!hasSeenIntro)
-        {
-            showIntro();
-        }
-        if(location == "Glade")
-        {
-            showGlade();
-        }
+    //void OnGUI()
+    //{
+    //    if(!hasSeenIntro)
+    //    {
+    //        showIntro();
+    //    }
+    //    if(location == "Glade")
+    //    {
+    //        showGlade();
+    //    }
 
-        if(startedGame)
-        {
-            if(energy > 0)
-            {
-                GUI.Label(new Rect(15, 15, 100, 20), "Energy:" + energy);
-            }
-            if(branch > 0)
-            {
-                GUI.Label(new Rect(15, 30, 100, 20), "Branch:" + branch);
-            }
-            if (berry > 0)
-            {
-                GUI.Label(new Rect(15, 45, 100, 20), "Berry:" + berry);
-            }
-        }
+    //    if(startedGame)
+    //    {
+    //        if(energy > 0)
+    //        {
+    //            GUI.Label(new Rect(15, 15, 100, 20), "Energy:" + energy);
+    //        }
+    //        if(branch > 0)
+    //        {
+    //            GUI.Label(new Rect(15, 30, 100, 20), "Branch:" + branch);
+    //        }
+    //        if (berry > 0)
+    //        {
+    //            GUI.Label(new Rect(15, 45, 100, 20), "Berry:" + berry);
+    //        }
+    //    }
 
-        showEat();
-        //GUI.Label(new Rect(15, 30, 100, 20), "Rock:" + rock);
-        //GUI.Label(new Rect(15, 45, 100, 20), "Sharp Rock:" + sharpRock);
-        //GUI.Label(new Rect(15, 60, 100, 20), "Grass:" + grass);
-        //GUI.Label(new Rect(15, 75, 100, 20), "Rope:" + rope);
-        //GUI.Label(new Rect(15, 90, 100, 20), "Iron Ore:" + ironOre);
-
-
+    //    showEat();
+    //    //GUI.Label(new Rect(15, 30, 100, 20), "Rock:" + rock);
+    //    //GUI.Label(new Rect(15, 45, 100, 20), "Sharp Rock:" + sharpRock);
+    //    //GUI.Label(new Rect(15, 60, 100, 20), "Grass:" + grass);
+    //    //GUI.Label(new Rect(15, 75, 100, 20), "Rope:" + rope);
+    //    //GUI.Label(new Rect(15, 90, 100, 20), "Iron Ore:" + ironOre);
 
 
-        //if(GUI.Button(new Rect(100, 100, 100, 20), "Gather"))
-        //{
-        //    gather();
-        //}
-        //if (GUI.Button(new Rect(100, 150, 100, 20), "Start"))
-        //{
-        //    created = true;
-        //    //firstPlot();
-        //}
-        //showBox();
 
-    }
+
+    //    //if(GUI.Button(new Rect(100, 100, 100, 20), "Gather"))
+    //    //{
+    //    //    gather();
+    //    //}
+    //    //if (GUI.Button(new Rect(100, 150, 100, 20), "Start"))
+    //    //{
+    //    //    created = true;
+    //    //    //firstPlot();
+    //    //}
+    //    //showBox();
+
+    //}
 
     private void showEat()
     {
@@ -176,10 +178,12 @@ public class PlayerProgress: MonoBehaviour
             if(UnityEngine.Random.Range(0, 100) < 50)
             {
                 branch++;
+                rock++;
             }
             else
             {
                 berry++;
+                rock++;
             }
             
         }
