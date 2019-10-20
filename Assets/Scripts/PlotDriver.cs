@@ -60,7 +60,7 @@ public class PlotDriver : MonoBehaviour
         if(Resources.Energy > 20)
         {
             buttonText.transform.parent.GetComponent<UnityEngine.UI.Button>().interactable = true;
-            buttonText.text = buttonTexts[step++];
+            //buttonText.text = buttonTexts[step++];
         }
     }
 }
