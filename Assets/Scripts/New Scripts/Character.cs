@@ -2,39 +2,73 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character
+public class Character : MonoBehaviour
 {
-    public CharacterStat Health;
-    public List<Item> loot;
 
-    public Character()
+    public CharacterStat Strength;
+    public CharacterStat Agility;
+    public CharacterStat Intelligence;
+    public CharacterStat Vitality;
+
+    [SerializeField] Inventory inventory;
+    [SerializeField] EquipmentPanel equipmentPanel;
+    [SerializeField] StatPanel statPanel;
+
+    private void Awake()
     {
-        Health = new CharacterStat();
-        loot = GenerateLoot();
+        statPanel.SetStats(Strength, Agility, Intelligence, Vitality);
+        statPanel.UpdateStatValues();
+
+        inventory.OnItemRightClickedEvent += EquipFromInventory;
+        equipmentPanel.OnItemRightClickedEvent += UnequipFromInventory;
     }
 
-    private List<Item> GenerateLoot()
+    private void EquipFromInventory(Item item)
     {
-        List<Item> loot = new List<Item>();
-        for (int i = 0; i < 5; i++)
+        if(item is EquippableItem)
         {
-            if(Random.Range(0, 5) > 1)
+            Equip((EquippableItem)item);
+        }
+    }
+
+    private void UnequipFromInventory(Item item)
+    {
+        if (item is EquippableItem)
+        {
+            Unequip((EquippableItem)item);
+        }
+    }
+
+    public void Equip(EquippableItem item)
+    {
+        if (inventory.RemoveItem(item))
+        {
+            EquippableItem previousItem;
+            if (equipmentPanel.AddItem(item, out previousItem))
             {
-                loot.Add(new Item());
+                if(previousItem != null)
+                {
+                    inventory.AddItem(previousItem);
+                    previousItem.Unequip(this);
+                    statPanel.UpdateStatValues();
+                }
+                item.Equip(this);
+                statPanel.UpdateStatValues();
+            }
+            else
+            {
+                inventory.AddItem(item);
             }
         }
-
-        return loot;
     }
 
-    public override string ToString() {
-        string temp = "";
-
-        for (int i = 0; i < loot.Count; i++)
+    public void Unequip(EquippableItem item)
+    {
+        if (!inventory.IsFull() && equipmentPanel.RemoveItem(item))
         {
-            temp += string.Concat(temp, string.Concat(loot[i].ToString(), "_O_"));
+            item.Unequip(this);
+            statPanel.UpdateStatValues();
+            inventory.AddItem(item);
         }
-        return temp;
     }
-
 }

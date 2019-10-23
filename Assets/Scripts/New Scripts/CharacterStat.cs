@@ -74,9 +74,9 @@ public class CharacterStat
     {
         bool didRemove = false;
 
-        for (int i = statModifiers.Count; i >= 0; i--)
+        for (int i = statModifiers.Count - 1; i >= 0; i--)
         {
-            if(statModifiers[i].Source.Equals(source))
+            if(statModifiers[i].Source == source)
             {
                 isDirty = true;
                 didRemove = true;

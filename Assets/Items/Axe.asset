@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  Name: Axe
+  Icon: {fileID: 21300000, guid: 836f03adfca5fae4da8d0b81d9aa4cc3, type: 3}
+  StrengthBonus: 2
+  AgilityBonus: 4
+  IntelligenceBonus: 5
+  VitalityBonus: 5
+  StrengthPercentBonus: 8
+  AgilityPercentBonus: 12
+  IntelligencePercentBonus: 12
+  VitalityPercentBonus: 12
+  EquipmentType: 4

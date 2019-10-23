@@ -14,43 +14,43 @@ public class Combat : MonoBehaviour
     private int enemyHP = 10;
     private WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
 
-    IEnumerator Progress()
-    {
-        while (true)
-        {
-            if(enemy.Health.BaseValue <= 0)
-            {
-                if(!string.IsNullOrEmpty(enemy.loot.ToString()))
-                {
-                    loot.text = string.Concat(loot.text, enemy.ToString());
-                }
-                enemy = new Character();
-                enemy.Health.BaseValue = 5;
-            }
-            if(hero.Health.BaseValue <= 0)
-            {
-                StopCoroutine(Progress());
-                StopAllCoroutines();
-            }
-            hero.Health.BaseValue--;
-            enemy.Health.BaseValue -= 2;
-            heroText.text = hero.Health.BaseValue.ToString();
-            enemyText.text = enemy.Health.BaseValue.ToString();
-            yield return waitForSeconds;
-        }
-    }
+    //IEnumerator Progress()
+    //{
+    //    while (true)
+    //    {
+    //        if(enemy.Health.BaseValue <= 0)
+    //        {
+    //            if(!string.IsNullOrEmpty(enemy.loot.ToString()))
+    //            {
+    //                loot.text = string.Concat(loot.text, enemy.ToString());
+    //            }
+    //            enemy = new Character();
+    //            enemy.Health.BaseValue = 5;
+    //        }
+    //        if(hero.Health.BaseValue <= 0)
+    //        {
+    //            StopCoroutine(Progress());
+    //            StopAllCoroutines();
+    //        }
+    //        hero.TakeDamage(enemy.DoDamage());
+    //        enemy.TakeDamage(hero.DoDamage());
+    //        heroText.text = hero.Health.BaseValue.ToString();
+    //        enemyText.text = enemy.Health.BaseValue.ToString();
+    //        yield return waitForSeconds;
+    //    }
+    //}
 
-    public void StartCombat()
-    {
-        StartCoroutine(Progress());
-    }
+    //public void StartCombat()
+    //{
+    //    StartCoroutine(Progress());
+    //}
 
-    private void Start()
-    {
-        hero = new Character();
-        enemy = new Character();
-        hero.Health.BaseValue = (float)heroHP;
-        enemy.Health.BaseValue = (float)enemyHP;
-        StartCoroutine(Progress());
-    }
+    //private void Start()
+    //{
+    //    hero = new Character("Hero");
+    //    enemy = new Character("Enemy - " + Time.deltaTime);
+    //    hero.Health.BaseValue = (float)heroHP;
+    //    enemy.Health.BaseValue = (float)enemyHP;
+    //    StartCoroutine(Progress());
+    //}
 }
