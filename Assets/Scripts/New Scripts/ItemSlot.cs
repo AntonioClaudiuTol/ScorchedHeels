@@ -8,6 +8,7 @@ using System;
 public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
 {
 	[SerializeField] Image Image;
+	[SerializeField] Text AmountText;
 
 	public event Action<ItemSlot> OnPointerEnterEvent;
 	public event Action<ItemSlot> OnPointerExitEvent;
@@ -20,21 +21,38 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 	private Color normalColor = Color.white;
 	private Color disabledColor = Color.clear;
 
-	private Item item;
+	private Item _item;
 	public Item Item
 	{
-		get { return item; }
+		get { return _item; }
 		set
 		{
-			item = value;
-			if(item == null)
+			_item = value;
+			if(_item == null)
 			{
 				Image.color = disabledColor;
 			}
 			else
 			{
-				Image.sprite = item.Icon;
+				Image.sprite = _item.Icon;
 				Image.color = normalColor;
+			}
+		}
+	}
+
+	private int _amount;
+	public int Amount {
+		get
+		{
+			return _amount;
+		}
+		set
+		{
+			_amount = value;
+			AmountText.enabled = _item != null && _item.MaximumStacks > 1 && _amount > 1;
+			if(AmountText.enabled)
+			{
+				AmountText.text = _amount.ToString();
 			}
 		}
 	}
@@ -55,6 +73,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 		if(Image == null)
 		{
 			Image = GetComponent<Image>();
+		}
+		if (AmountText == null)
+		{
+			AmountText = GetComponentInChildren<Text>();
 		}
 	}
 

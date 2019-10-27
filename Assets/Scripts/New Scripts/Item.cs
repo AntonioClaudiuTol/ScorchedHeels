@@ -1,17 +1,29 @@
 ﻿using UnityEngine;
+using UnityEditor;
 
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
-    public string Name;
-    public Sprite Icon;
+	[SerializeField] string id;
+	public string ID { get { return id; } }
+	public string Name;
+	public Sprite Icon;
+	[Range(1, 999)]
+	public int MaximumStacks = 1;
+	
+	private void OnValidate()
+	{
+		string path = AssetDatabase.GetAssetPath(this);
+		id = AssetDatabase.AssetPathToGUID(path);
+	}
 
-    public Item()
-    {
-        //Name = "Item no. " + Time.deltaTime;
-    }
+	public virtual Item GetCopy()
+	{
+		return this;
+	}
 
-    public override string ToString() {
-        return Name;
-    }
+	public virtual void Destroy()
+	{
+		
+	}
 }

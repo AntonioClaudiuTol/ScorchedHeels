@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
 	[SerializeField] Image draggableItem;
 	[SerializeField] StatTooltip statTooltip;
 
-	private ItemSlot draggedSlot;
+	private ItemSlot dragItemSlot;
 
 	private void OnValidate()
 	{
@@ -94,7 +94,7 @@ public class Character : MonoBehaviour
 		
 		if (itemSlot != null)
 		{
-			draggedSlot = itemSlot;
+			dragItemSlot = itemSlot;
 			draggableItem.sprite = itemSlot.Item.Icon;
 			draggableItem.transform.position = Input.mousePosition;
 			draggableItem.enabled = true;
@@ -104,8 +104,7 @@ public class Character : MonoBehaviour
 
 	private void EndDrag(ItemSlot itemSlot)
 	{
-		Debug.Log("End Drag");
-		draggedSlot = null;
+		dragItemSlot = null;
 		draggableItem.enabled = false;
 	}
 
@@ -119,13 +118,15 @@ public class Character : MonoBehaviour
 
 	private void Drop(ItemSlot dropItemSlot)
 	{
-		if(dropItemSlot.CanReceiveItem(draggedSlot.Item) && draggedSlot.CanReceiveItem(dropItemSlot.Item))
+		if (dragItemSlot == null) return;
+
+		if(dropItemSlot.CanReceiveItem(dragItemSlot.Item) && dragItemSlot.CanReceiveItem(dropItemSlot.Item))
 		{
 			Debug.Log("after if");
-			EquippableItem dragItem = draggedSlot.Item as EquippableItem;
+			EquippableItem dragItem = dragItemSlot.Item as EquippableItem;
 			EquippableItem dropItem = dropItemSlot.Item as EquippableItem;
 
-			if (draggedSlot is EquipmentSlot)
+			if (dragItemSlot is EquipmentSlot)
 			{
 				if (dragItem != null) dragItem.Unequip(this);
 				if (dropItem != null) dropItem.Equip(this);
@@ -138,9 +139,14 @@ public class Character : MonoBehaviour
 			statPanel.UpdateStatValues();
 
 
-			Item draggedItem = draggedSlot.Item;
-			draggedSlot.Item = dropItemSlot.Item;
+			Item draggedItem = dragItemSlot.Item;
+			int draggedItemAmount = dragItemSlot.Amount;
+
+			dragItemSlot.Item = dropItemSlot.Item;
+			dragItemSlot.Amount = dropItemSlot.Amount;
+
 			dropItemSlot.Item = draggedItem;
+			dropItemSlot.Amount = draggedItemAmount;
 		}
 	}
 
