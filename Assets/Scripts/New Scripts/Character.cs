@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
 	[SerializeField] Image draggableItem;
 	[SerializeField] StatTooltip statTooltip;
 
-	private ItemSlot dragItemSlot;
+	private BaseItemSlot dragItemSlot;
 
 	private void OnValidate()
 	{
@@ -57,7 +57,7 @@ public class Character : MonoBehaviour
 		equipmentPanel.OnDropEvent += Drop;
 	}
 
-	private void Equip(ItemSlot itemSlot)
+	private void Equip(BaseItemSlot itemSlot)
 	{
 		EquippableItem equippableItem = itemSlot.Item as EquippableItem;
 		if(equippableItem != null)
@@ -66,7 +66,7 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	private void Unequip(ItemSlot itemSlot)
+	private void Unequip(BaseItemSlot itemSlot)
 	{
 		EquippableItem equippableItem = itemSlot.Item as EquippableItem;
 		if (equippableItem != null)
@@ -75,7 +75,7 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	private void ShowTooltip(ItemSlot itemSlot)
+	private void ShowTooltip(BaseItemSlot itemSlot)
 	{
 		EquippableItem equippableItem = itemSlot.Item as EquippableItem;
 		if (equippableItem != null)
@@ -84,12 +84,12 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	private void HideTooltip(ItemSlot itemSlot)
+	private void HideTooltip(BaseItemSlot itemSlot)
 	{
 		itemTooltip.HideTooltip();
 	}
 
-	private void BeginDrag(ItemSlot itemSlot)
+	private void BeginDrag(BaseItemSlot itemSlot)
 	{
 		
 		if (itemSlot != null)
@@ -102,13 +102,13 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	private void EndDrag(ItemSlot itemSlot)
+	private void EndDrag(BaseItemSlot itemSlot)
 	{
 		dragItemSlot = null;
 		draggableItem.enabled = false;
 	}
 
-	private void Drag(ItemSlot itemSlot)
+	private void Drag(BaseItemSlot itemSlot)
 	{
 		if(draggableItem.enabled)
 		{
@@ -116,7 +116,7 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	private void Drop(ItemSlot dropItemSlot)
+	private void Drop(BaseItemSlot dropItemSlot)
 	{
 		if (dragItemSlot == null) return;
 
