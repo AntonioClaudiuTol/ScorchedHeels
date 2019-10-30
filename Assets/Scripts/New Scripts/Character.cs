@@ -13,10 +13,10 @@ public class Character : MonoBehaviour
 
 	[SerializeField] Inventory inventory;
 	[SerializeField] EquipmentPanel equipmentPanel;
+	[SerializeField] CraftingWindow craftingWindow;
 	[SerializeField] StatPanel statPanel;
 	[SerializeField] ItemTooltip itemTooltip;
 	[SerializeField] Image draggableItem;
-	[SerializeField] StatTooltip statTooltip;
 
 	private BaseItemSlot dragItemSlot;
 
@@ -28,8 +28,13 @@ public class Character : MonoBehaviour
 		}
 	}
 
-	private void Awake()
+	private void Start()
 	{
+		if(itemTooltip == null)
+		{
+			itemTooltip = FindObjectOfType<ItemTooltip>();
+		}
+
 		statPanel.SetStats(Strength, Agility, Intelligence, Vitality);
 		statPanel.UpdateStatValues();
 
@@ -40,9 +45,11 @@ public class Character : MonoBehaviour
 		// Pointer Enter
 		inventory.OnPointerEnterEvent += ShowTooltip;
 		equipmentPanel.OnPointerEnterEvent += ShowTooltip;
-		// Pointer Enter
+		craftingWindow.OnPointerEnterEvent += ShowTooltip;
+		// Pointer Exit
 		inventory.OnPointerExitEvent += HideTooltip;
 		equipmentPanel.OnPointerExitEvent += HideTooltip;
+		craftingWindow.OnPointerExitEvent += HideTooltip;
 		// Begin Drag
 		inventory.OnBeginDragEvent += BeginDrag;
 		equipmentPanel.OnBeginDragEvent += BeginDrag;
