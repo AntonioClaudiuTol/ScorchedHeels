@@ -212,6 +212,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556819}
   m_CullTransparentMesh: 0
+--- !u!114 &1854400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Helmet(Clone)
+  m_EditorClassIdentifier: 
+  id: d485965eefb3062438af00df35eee3e6
+  Name: Helmet
+  Icon: {fileID: 21300000, guid: 1db8dade7b3b2be4c872478c758a7c2f, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 3
+  AgilityBonus: 5
+  IntelligenceBonus: 0
+  VitalityBonus: 3
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 0
 --- !u!1 &11258266
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +459,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12233936}
   m_CullTransparentMesh: 0
+--- !u!114 &17495594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Axe(Clone)
+  m_EditorClassIdentifier: 
+  id: 3d09a162a5a22f446bf4cd3866693675
+  Name: Axe
+  Icon: {fileID: 21300000, guid: 5f5f60b0e09e3cd4ab400093af0e094c, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 2
+  AgilityBonus: 4
+  IntelligenceBonus: 5
+  VitalityBonus: 5
+  StrengthPercentBonus: 0.08
+  AgilityPercentBonus: 0.12
+  IntelligencePercentBonus: 0.12
+  VitalityPercentBonus: 0.12
+  EquipmentType: 4
 --- !u!1 &18938371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,16 +1271,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88459631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 556.9563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2010907224}
-  m_Father: {fileID: 1152180235}
-  m_RootOrder: 3
+  m_Father: {fileID: 924858616}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 660, y: 177.5}
+  m_AnchoredPosition: {x: 931.7991, y: 989.69635}
   m_SizeDelta: {x: 600, y: 725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &88459633
@@ -1538,6 +1588,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122883014}
   m_CullTransparentMesh: 0
+--- !u!114 &151271328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Bow(Clone)
+  m_EditorClassIdentifier: 
+  id: e0d01979780d77341b4e3aa07f10b2df
+  Name: Bow
+  Icon: {fileID: 21300000, guid: 147437c1d9d2ed740bc9bdb7890dff5c, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 0
+  AgilityBonus: 0
+  IntelligenceBonus: 0
+  VitalityBonus: 0
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 4
 --- !u!1 &151963881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,31 +1781,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152137950}
   m_CullTransparentMesh: 0
---- !u!114 &158033781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Axe(Clone)
-  m_EditorClassIdentifier: 
-  id: 3d09a162a5a22f446bf4cd3866693675
-  Name: Axe
-  Icon: {fileID: 21300000, guid: 5f5f60b0e09e3cd4ab400093af0e094c, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 4
-  IntelligenceBonus: 5
-  VitalityBonus: 5
-  StrengthPercentBonus: 0.08
-  AgilityPercentBonus: 0.12
-  IntelligencePercentBonus: 0.12
-  VitalityPercentBonus: 0.12
-  EquipmentType: 4
 --- !u!1 &165026289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,31 +3859,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &390397564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
 --- !u!1 &390485674
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,6 +4268,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411709199}
   m_CullTransparentMesh: 0
+--- !u!114 &414830632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Blue Gem(Clone)
+  m_EditorClassIdentifier: 
+  id: 9b37173289517fb4981bedb10f8b2f5e
+  Name: Blue Gem
+  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 2
+  AgilityBonus: 2
+  IntelligenceBonus: 2
+  VitalityBonus: 2
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 6
 --- !u!1 &424799550
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,7 +4372,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424799550}
   m_CullTransparentMesh: 0
---- !u!114 &425447132
+--- !u!114 &438867996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4332,46 +4382,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
+  m_Name: Hammer(Clone)
   m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  id: 19dc586cb065abc40b5c3e5378a4edf9
+  Name: Hammer
+  Icon: {fileID: 21300000, guid: 96fa9f8804608ca4db851b611d13dbb1, type: 3}
   MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
+  StrengthBonus: 0
+  AgilityBonus: 0
+  IntelligenceBonus: 0
+  VitalityBonus: 0
   StrengthPercentBonus: 0
   AgilityPercentBonus: 0
   IntelligencePercentBonus: 0
   VitalityPercentBonus: 0
-  EquipmentType: 6
---- !u!114 &434264805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Dagger(Clone)
-  m_EditorClassIdentifier: 
-  id: d81d33c3886f23444aa0ee24a6a80788
-  Name: Dagger
-  Icon: {fileID: 21300000, guid: 396c61731bebc0744a5b67e4fe202866, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 1
-  AgilityBonus: 1
-  IntelligenceBonus: 1
-  VitalityBonus: 1
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 5
+  EquipmentType: 4
 --- !u!1 &442952226
 GameObject:
   m_ObjectHideFlags: 0
@@ -4416,7 +4441,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442952226}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -4442,7 +4467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 4
 --- !u!222 &442952229
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5596,31 +5621,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &533856807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Sword(Clone)
-  m_EditorClassIdentifier: 
-  id: 3d9f1d6c05d2b2d4ab1d07d27d34e825
-  Name: Sword
-  Icon: {fileID: 21300000, guid: 2b656c835492a0b4fb3d39886b88d774, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 7
-  AgilityBonus: 7
-  IntelligenceBonus: 7
-  VitalityBonus: 7
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
 --- !u!1 &538857500
 GameObject:
   m_ObjectHideFlags: 0
@@ -5697,31 +5697,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538857500}
   m_CullTransparentMesh: 0
---- !u!114 &544823099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Axe(Clone)
-  m_EditorClassIdentifier: 
-  id: 3d09a162a5a22f446bf4cd3866693675
-  Name: Axe
-  Icon: {fileID: 21300000, guid: 5f5f60b0e09e3cd4ab400093af0e094c, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 4
-  IntelligenceBonus: 5
-  VitalityBonus: 5
-  StrengthPercentBonus: 0.08
-  AgilityPercentBonus: 0.12
-  IntelligencePercentBonus: 0.12
-  VitalityPercentBonus: 0.12
-  EquipmentType: 4
 --- !u!1 &551123908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5968,56 +5943,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566936361}
   m_CullTransparentMesh: 0
---- !u!114 &569150853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
---- !u!114 &571043001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: BattleAxe(Clone)
-  m_EditorClassIdentifier: 
-  id: 77ab3b3b54c774a40b2587987e6f2c30
-  Name: BattleAxe
-  Icon: {fileID: 21300000, guid: 42e6c23dca9754a4ba27432be25baa79, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
 --- !u!1 &580361645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6094,6 +6019,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580361645}
   m_CullTransparentMesh: 0
+--- !u!114 &595736904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Shield(Clone)
+  m_EditorClassIdentifier: 
+  id: 1ec5f1240f314ec40ae78dabfdc7c627
+  Name: Shield
+  Icon: {fileID: 21300000, guid: daffba8e3cba82448927125184bfbe4a, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 0
+  AgilityBonus: 0
+  IntelligenceBonus: 0
+  VitalityBonus: 0
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 5
 --- !u!1 &604606037
 GameObject:
   m_ObjectHideFlags: 0
@@ -8953,31 +8903,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &848946669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
 --- !u!1 &852351939
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,6 +9571,52 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &924858615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924858616}
+  - component: {fileID: 924858617}
+  m_Layer: 0
+  m_Name: Crafting Window Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924858616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924858615}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -271.79913, y: -812.19635, z: -556.9563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 88459632}
+  m_Father: {fileID: 1152180235}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924858617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924858615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd959d561f4f7584c9bb1b706c790eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftingWindow: {fileID: 2103940420505710820}
+  openCraftingWindowKeyCode: 112
 --- !u!1 &933274348
 GameObject:
   m_ObjectHideFlags: 0
@@ -10361,31 +10332,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993116885}
   m_CullTransparentMesh: 0
---- !u!114 &998427909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
 --- !u!1 &1001926258
 GameObject:
   m_ObjectHideFlags: 0
@@ -11006,6 +10952,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078258648}
   m_CullTransparentMesh: 0
+--- !u!114 &1086932382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Sword(Clone)
+  m_EditorClassIdentifier: 
+  id: 3d9f1d6c05d2b2d4ab1d07d27d34e825
+  Name: Sword
+  Icon: {fileID: 21300000, guid: 2b656c835492a0b4fb3d39886b88d774, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 7
+  AgilityBonus: 7
+  IntelligenceBonus: 7
+  VitalityBonus: 7
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 4
 --- !u!1 &1100039493
 GameObject:
   m_ObjectHideFlags: 0
@@ -11426,7 +11397,7 @@ RectTransform:
   - {fileID: 2069257307}
   - {fileID: 1410717602}
   - {fileID: 1750377087473707085}
-  - {fileID: 88459632}
+  - {fileID: 924858616}
   - {fileID: 5892328657839675714}
   - {fileID: 411709200}
   - {fileID: 270634442}
@@ -12523,6 +12494,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248123477}
   m_CullTransparentMesh: 0
+--- !u!114 &1248577024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Blue Gem(Clone)
+  m_EditorClassIdentifier: 
+  id: 9b37173289517fb4981bedb10f8b2f5e
+  Name: Blue Gem
+  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 2
+  AgilityBonus: 2
+  IntelligenceBonus: 2
+  VitalityBonus: 2
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 6
 --- !u!1 &1250656101
 GameObject:
   m_ObjectHideFlags: 0
@@ -13052,31 +13048,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1334770602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Bow(Clone)
-  m_EditorClassIdentifier: 
-  id: e0d01979780d77341b4e3aa07f10b2df
-  Name: Bow
-  Icon: {fileID: 21300000, guid: 147437c1d9d2ed740bc9bdb7890dff5c, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
 --- !u!1 &1336701393
 GameObject:
   m_ObjectHideFlags: 0
@@ -13153,31 +13124,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336701393}
   m_CullTransparentMesh: 0
---- !u!114 &1356834474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Armor(Clone)
-  m_EditorClassIdentifier: 
-  id: 2e71df6663d3121469f68678587fe886
-  Name: Armor
-  Icon: {fileID: 21300000, guid: d4abc84fb789f2147a2380a013299059, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 3
-  AgilityBonus: 3
-  IntelligenceBonus: 3
-  VitalityBonus: 3
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 1
 --- !u!1 &1359694326
 GameObject:
   m_ObjectHideFlags: 0
@@ -13732,31 +13678,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404465804}
   m_CullTransparentMesh: 0
---- !u!114 &1407695362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
 --- !u!1 &1408875089
 GameObject:
   m_ObjectHideFlags: 0
@@ -16077,6 +15998,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608549062}
   m_CullTransparentMesh: 0
+--- !u!114 &1617290491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Armor(Clone)
+  m_EditorClassIdentifier: 
+  id: 2e71df6663d3121469f68678587fe886
+  Name: Armor
+  Icon: {fileID: 21300000, guid: d4abc84fb789f2147a2380a013299059, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 3
+  AgilityBonus: 3
+  IntelligenceBonus: 3
+  VitalityBonus: 3
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 1
 --- !u!1 &1621037558
 GameObject:
   m_ObjectHideFlags: 0
@@ -16614,31 +16560,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661172103}
   m_CullTransparentMesh: 0
---- !u!114 &1679223881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Helmet(Clone)
-  m_EditorClassIdentifier: 
-  id: d485965eefb3062438af00df35eee3e6
-  Name: Helmet
-  Icon: {fileID: 21300000, guid: 1db8dade7b3b2be4c872478c758a7c2f, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 3
-  AgilityBonus: 5
-  IntelligenceBonus: 0
-  VitalityBonus: 3
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 0
 --- !u!1 &1680100638
 GameObject:
   m_ObjectHideFlags: 0
@@ -17778,6 +17699,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759676240}
   m_CullTransparentMesh: 0
+--- !u!114 &1782323014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Dagger(Clone)
+  m_EditorClassIdentifier: 
+  id: d81d33c3886f23444aa0ee24a6a80788
+  Name: Dagger
+  Icon: {fileID: 21300000, guid: 396c61731bebc0744a5b67e4fe202866, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 1
+  AgilityBonus: 1
+  IntelligenceBonus: 1
+  VitalityBonus: 1
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 5
+--- !u!114 &1795294817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: BattleAxe(Clone)
+  m_EditorClassIdentifier: 
+  id: 77ab3b3b54c774a40b2587987e6f2c30
+  Name: BattleAxe
+  Icon: {fileID: 21300000, guid: 42e6c23dca9754a4ba27432be25baa79, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 0
+  AgilityBonus: 0
+  IntelligenceBonus: 0
+  VitalityBonus: 0
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 4
 --- !u!1 &1799953669
 GameObject:
   m_ObjectHideFlags: 0
@@ -18179,6 +18150,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832295685}
   m_CullTransparentMesh: 0
+--- !u!114 &1845739359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Blue Gem(Clone)
+  m_EditorClassIdentifier: 
+  id: 9b37173289517fb4981bedb10f8b2f5e
+  Name: Blue Gem
+  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 2
+  AgilityBonus: 2
+  IntelligenceBonus: 2
+  VitalityBonus: 2
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 6
 --- !u!1 &1870528064
 GameObject:
   m_ObjectHideFlags: 0
@@ -18294,11 +18290,11 @@ RectTransform:
   m_Father: {fileID: 2069257307}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -125}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -50, y: 50}
   m_SizeDelta: {x: 450, y: 280}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1876421138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18619,31 +18615,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1891210260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
 --- !u!1 &1893409175
 GameObject:
   m_ObjectHideFlags: 0
@@ -18723,31 +18694,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893409175}
   m_CullTransparentMesh: 0
---- !u!114 &1902470691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Hammer(Clone)
-  m_EditorClassIdentifier: 
-  id: 19dc586cb065abc40b5c3e5378a4edf9
-  Name: Hammer
-  Icon: {fileID: 21300000, guid: 96fa9f8804608ca4db851b611d13dbb1, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
 --- !u!1 &1904584175
 GameObject:
   m_ObjectHideFlags: 0
@@ -19034,31 +18980,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1932325378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Shield(Clone)
-  m_EditorClassIdentifier: 
-  id: 1ec5f1240f314ec40ae78dabfdc7c627
-  Name: Shield
-  Icon: {fileID: 21300000, guid: daffba8e3cba82448927125184bfbe4a, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 5
 --- !u!1 &1962324943
 GameObject:
   m_ObjectHideFlags: 0
@@ -19975,6 +19896,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
+--- !u!114 &2055444809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Blue Gem(Clone)
+  m_EditorClassIdentifier: 
+  id: 9b37173289517fb4981bedb10f8b2f5e
+  Name: Blue Gem
+  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 2
+  AgilityBonus: 2
+  IntelligenceBonus: 2
+  VitalityBonus: 2
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 6
 --- !u!1 &2056538359
 GameObject:
   m_ObjectHideFlags: 0
@@ -20807,6 +20753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item Stash Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776758346683962040, guid: 98d089515524a4c4dac863a4bf3536cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6776758346683962023, guid: 98d089515524a4c4dac863a4bf3536cb,
         type: 3}
@@ -22317,7 +22268,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 951d668af5ade354db3cd0f371cc3fb3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22349,7 +22300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377085828047225}
   AmountText: {fileID: 1694306784}
-  _item: {fileID: 848946669}
+  _item: {fileID: 11400000, guid: 6b835042200e812499346fd1f9ecfb7e, type: 2}
 --- !u!114 &1750377085909615870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22611,7 +22562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377085976834212}
   AmountText: {fileID: 379060241}
-  _item: {fileID: 1334770602}
+  _item: {fileID: 151271328}
 --- !u!1 &1750377086025891383
 GameObject:
   m_ObjectHideFlags: 0
@@ -22887,7 +22838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377086067100148}
   AmountText: {fileID: 957191878}
-  _item: {fileID: 1891210260}
+  _item: {fileID: 1845739359}
 --- !u!1 &1750377086081503284
 GameObject:
   m_ObjectHideFlags: 0
@@ -22979,7 +22930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377086081503286}
   AmountText: {fileID: 1827261895}
-  _item: {fileID: 571043001}
+  _item: {fileID: 1795294817}
 --- !u!1 &1750377086113040544
 GameObject:
   m_ObjectHideFlags: 0
@@ -23473,7 +23424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -23512,7 +23463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377086329329711}
   AmountText: {fileID: 400644832}
-  _item: {fileID: 544823099}
+  _item: {fileID: 0}
 --- !u!1 &1750377086366021388
 GameObject:
   m_ObjectHideFlags: 0
@@ -23775,7 +23726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377086479957352}
   AmountText: {fileID: 1521232572}
-  _item: {fileID: 434264805}
+  _item: {fileID: 1782323014}
 --- !u!1 &1750377086493343831
 GameObject:
   m_ObjectHideFlags: 0
@@ -24306,7 +24257,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b72aa610e69af714698ff0bd74bfa1b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24338,7 +24289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377086751602674}
   AmountText: {fileID: 442952228}
-  _item: {fileID: 569150853}
+  _item: {fileID: 11400000, guid: bed20e16079884d44b867ad6a81afb97, type: 2}
 --- !u!1 &1750377087008775142
 GameObject:
   m_ObjectHideFlags: 0
@@ -24430,7 +24381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087008775144}
   AmountText: {fileID: 1975831583}
-  _item: {fileID: 1902470691}
+  _item: {fileID: 438867996}
 --- !u!1 &1750377087016548448
 GameObject:
   m_ObjectHideFlags: 0
@@ -24796,7 +24747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087090961578}
   AmountText: {fileID: 424799552}
-  _item: {fileID: 425447132}
+  _item: {fileID: 414830632}
 --- !u!1 &1750377087149945039
 GameObject:
   m_ObjectHideFlags: 0
@@ -25057,7 +25008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087299693037}
   AmountText: {fileID: 299834078}
-  _item: {fileID: 1356834474}
+  _item: {fileID: 1617290491}
 --- !u!1 &1750377087322444545
 GameObject:
   m_ObjectHideFlags: 0
@@ -25149,7 +25100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087322444547}
   AmountText: {fileID: 635378752}
-  _item: {fileID: 1679223881}
+  _item: {fileID: 1854400}
 --- !u!222 &1750377087369234304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25172,7 +25123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087369234367}
   AmountText: {fileID: 476803052}
-  _item: {fileID: 390397564}
+  _item: {fileID: 1248577024}
 --- !u!1 &1750377087369234365
 GameObject:
   m_ObjectHideFlags: 0
@@ -25314,7 +25265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087432435969}
   AmountText: {fileID: 1621037560}
-  _item: {fileID: 158033781}
+  _item: {fileID: 17495594}
 --- !u!1 &1750377087432436031
 GameObject:
   m_ObjectHideFlags: 0
@@ -25368,7 +25319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -554, y: 0}
+  m_AnchoredPosition: {x: -190, y: 0}
   m_SizeDelta: {x: 1208, y: 1636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750377087517757440
@@ -25538,7 +25489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087518504924}
   AmountText: {fileID: 1078258650}
-  _item: {fileID: 533856807}
+  _item: {fileID: 1086932382}
 --- !u!114 &1750377087533664601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25584,10 +25535,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d9f1d6c05d2b2d4ab1d07d27d34e825, type: 2}
   - {fileID: 11400000, guid: 9b37173289517fb4981bedb10f8b2f5e, type: 2}
   - {fileID: 11400000, guid: 9b37173289517fb4981bedb10f8b2f5e, type: 2}
-  - {fileID: 11400000, guid: 9b37173289517fb4981bedb10f8b2f5e, type: 2}
-  - {fileID: 11400000, guid: 9b37173289517fb4981bedb10f8b2f5e, type: 2}
-  - {fileID: 11400000, guid: 9b37173289517fb4981bedb10f8b2f5e, type: 2}
-  - {fileID: 11400000, guid: 3d09a162a5a22f446bf4cd3866693675, type: 2}
+  - {fileID: 11400000, guid: bed20e16079884d44b867ad6a81afb97, type: 2}
+  - {fileID: 11400000, guid: bed20e16079884d44b867ad6a81afb97, type: 2}
+  - {fileID: 11400000, guid: bed20e16079884d44b867ad6a81afb97, type: 2}
+  - {fileID: 11400000, guid: bed20e16079884d44b867ad6a81afb97, type: 2}
+  - {fileID: 11400000, guid: 6b835042200e812499346fd1f9ecfb7e, type: 2}
   itemParent: {fileID: 1750377085722883347}
 --- !u!1 &1750377087534595661
 GameObject:
@@ -25911,7 +25863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087582842934}
   AmountText: {fileID: 2133306362}
-  _item: {fileID: 998427909}
+  _item: {fileID: 2055444809}
 --- !u!1 &1750377087702514520
 GameObject:
   m_ObjectHideFlags: 0
@@ -26043,7 +25995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -26082,7 +26034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087745165741}
   AmountText: {fileID: 1982093936}
-  _item: {fileID: 1407695362}
+  _item: {fileID: 0}
 --- !u!1 &1750377087752907162
 GameObject:
   m_ObjectHideFlags: 0
@@ -26250,7 +26202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1750377087794626781}
   AmountText: {fileID: 690304958}
-  _item: {fileID: 1932325378}
+  _item: {fileID: 595736904}
 --- !u!114 &2103940420505710820
 MonoBehaviour:
   m_ObjectHideFlags: 0
