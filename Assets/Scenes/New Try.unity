@@ -835,7 +835,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1db8dade7b3b2be4c872478c758a7c2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b72aa610e69af714698ff0bd74bfa1b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1636,7 +1636,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 52a0949c58c391b4eba717764ac69cc0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4abc84fb789f2147a2380a013299059, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1668,7 +1668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 149790861}
   AmountText: {fileID: 299834078}
-  _item: {fileID: 11400000, guid: 6c891d2e39ac8344691fba87d528732c, type: 2}
+  _item: {fileID: 1733847887}
 --- !u!1 &151963881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,7 +3347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299834076}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -3373,7 +3373,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4
+  m_Text: 5
 --- !u!222 &299834079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4389,7 +4389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 2
 --- !u!222 &424799553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4450,7 +4450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4489,7 +4489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 431133320}
   AmountText: {fileID: 1975831583}
-  _item: {fileID: 1790378421}
+  _item: {fileID: 0}
 --- !u!1 &442952226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5947,31 +5947,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580361645}
   m_CullTransparentMesh: 0
---- !u!114 &590393777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Shield(Clone)
-  m_EditorClassIdentifier: 
-  id: 1ec5f1240f314ec40ae78dabfdc7c627
-  Name: Shield
-  Icon: {fileID: 21300000, guid: daffba8e3cba82448927125184bfbe4a, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 5
 --- !u!1 &604606037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6876,7 +6851,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: daffba8e3cba82448927125184bfbe4a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52a0949c58c391b4eba717764ac69cc0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7719,7 +7694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7758,7 +7733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 728615357}
   AmountText: {fileID: 690304958}
-  _item: {fileID: 741058649}
+  _item: {fileID: 0}
 --- !u!1 &737427613
 GameObject:
   m_ObjectHideFlags: 0
@@ -7926,31 +7901,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739160525}
   m_CullTransparentMesh: 0
---- !u!114 &741058649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Armor(Clone)
-  m_EditorClassIdentifier: 
-  id: 2e71df6663d3121469f68678587fe886
-  Name: Armor
-  Icon: {fileID: 21300000, guid: d4abc84fb789f2147a2380a013299059, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 3
-  AgilityBonus: 3
-  IntelligenceBonus: 3
-  VitalityBonus: 3
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 1
 --- !u!1 &747065896
 GameObject:
   m_ObjectHideFlags: 0
@@ -8781,7 +8731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8820,7 +8770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 821174369}
   AmountText: {fileID: 1621037560}
-  _item: {fileID: 1666541347}
+  _item: {fileID: 0}
 --- !u!1 &837479238
 GameObject:
   m_ObjectHideFlags: 0
@@ -9136,7 +9086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9175,7 +9125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 876007135}
   AmountText: {fileID: 476803052}
-  _item: {fileID: 590393777}
+  _item: {fileID: 0}
 --- !u!1 &883760158
 GameObject:
   m_ObjectHideFlags: 0
@@ -9709,7 +9659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9748,7 +9698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 926997091}
   AmountText: {fileID: 635378752}
-  _item: {fileID: 1441843046}
+  _item: {fileID: 0}
 --- !u!1 &933274348
 GameObject:
   m_ObjectHideFlags: 0
@@ -10484,19 +10434,7 @@ MonoBehaviour:
   - {fileID: 1915883857}
   - {fileID: 170799669}
   startingItems:
-  - {fileID: 11400000, guid: 3d9f1d6c05d2b2d4ab1d07d27d34e825, type: 2}
-  - {fileID: 11400000, guid: 1ec5f1240f314ec40ae78dabfdc7c627, type: 2}
-  - {fileID: 11400000, guid: d485965eefb3062438af00df35eee3e6, type: 2}
-  - {fileID: 11400000, guid: 19dc586cb065abc40b5c3e5378a4edf9, type: 2}
-  - {fileID: 11400000, guid: d81d33c3886f23444aa0ee24a6a80788, type: 2}
-  - {fileID: 11400000, guid: e0d01979780d77341b4e3aa07f10b2df, type: 2}
-  - {fileID: 11400000, guid: 9b37173289517fb4981bedb10f8b2f5e, type: 2}
-  - {fileID: 11400000, guid: 77ab3b3b54c774a40b2587987e6f2c30, type: 2}
-  - {fileID: 11400000, guid: 3d09a162a5a22f446bf4cd3866693675, type: 2}
   - {fileID: 11400000, guid: 2e71df6663d3121469f68678587fe886, type: 2}
-  - {fileID: 11400000, guid: bed20e16079884d44b867ad6a81afb97, type: 2}
-  - {fileID: 11400000, guid: 6b835042200e812499346fd1f9ecfb7e, type: 2}
-  - {fileID: 11400000, guid: 6c891d2e39ac8344691fba87d528732c, type: 2}
   itemParent: {fileID: 1458076787}
 --- !u!1 &991133370
 GameObject:
@@ -10557,7 +10495,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2b656c835492a0b4fb3d39886b88d774, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 951d668af5ade354db3cd0f371cc3fb3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11464,7 +11402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11503,7 +11441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1095342422}
   AmountText: {fileID: 1827261895}
-  _item: {fileID: 1904661719}
+  _item: {fileID: 0}
 --- !u!1 &1100039493
 GameObject:
   m_ObjectHideFlags: 0
@@ -11632,7 +11570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11671,7 +11609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1100333204}
   AmountText: {fileID: 957191878}
-  _item: {fileID: 1663679863}
+  _item: {fileID: 0}
 --- !u!1 &1109255635
 GameObject:
   m_ObjectHideFlags: 0
@@ -12527,7 +12465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12566,7 +12504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1194817988}
   AmountText: {fileID: 379060241}
-  _item: {fileID: 1667866495}
+  _item: {fileID: 0}
 --- !u!1 &1197889232
 GameObject:
   m_ObjectHideFlags: 0
@@ -14646,31 +14584,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372091109}
   m_CullTransparentMesh: 0
---- !u!114 &1376924475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Blue Gem(Clone)
-  m_EditorClassIdentifier: 
-  id: 9b37173289517fb4981bedb10f8b2f5e
-  Name: Blue Gem
-  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 2
-  IntelligenceBonus: 2
-  VitalityBonus: 2
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 6
 --- !u!1 &1399698297
 GameObject:
   m_ObjectHideFlags: 0
@@ -15180,31 +15093,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1441843046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Axe(Clone)
-  m_EditorClassIdentifier: 
-  id: 3d09a162a5a22f446bf4cd3866693675
-  Name: Axe
-  Icon: {fileID: 21300000, guid: 5f5f60b0e09e3cd4ab400093af0e094c, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 2
-  AgilityBonus: 4
-  IntelligenceBonus: 5
-  VitalityBonus: 5
-  StrengthPercentBonus: 0.08
-  AgilityPercentBonus: 0.12
-  IntelligencePercentBonus: 0.12
-  VitalityPercentBonus: 0.12
-  EquipmentType: 4
 --- !u!1 &1446657707
 GameObject:
   m_ObjectHideFlags: 0
@@ -17636,81 +17524,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: 5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1663679863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Helmet(Clone)
-  m_EditorClassIdentifier: 
-  id: d485965eefb3062438af00df35eee3e6
-  Name: Helmet
-  Icon: {fileID: 21300000, guid: 1db8dade7b3b2be4c872478c758a7c2f, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 3
-  AgilityBonus: 5
-  IntelligenceBonus: 0
-  VitalityBonus: 3
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 0
---- !u!114 &1666541347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Hammer(Clone)
-  m_EditorClassIdentifier: 
-  id: 19dc586cb065abc40b5c3e5378a4edf9
-  Name: Hammer
-  Icon: {fileID: 21300000, guid: 96fa9f8804608ca4db851b611d13dbb1, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
---- !u!114 &1667866495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Bow(Clone)
-  m_EditorClassIdentifier: 
-  id: e0d01979780d77341b4e3aa07f10b2df
-  Name: Bow
-  Icon: {fileID: 21300000, guid: 147437c1d9d2ed740bc9bdb7890dff5c, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
 --- !u!1 &1676538618
 GameObject:
   m_ObjectHideFlags: 0
@@ -18113,6 +17926,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698888465}
   m_CullTransparentMesh: 0
+--- !u!114 &1733847887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
+  m_Name: Armor(Clone)
+  m_EditorClassIdentifier: 
+  id: 2e71df6663d3121469f68678587fe886
+  Name: Armor
+  Icon: {fileID: 21300000, guid: d4abc84fb789f2147a2380a013299059, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 3
+  AgilityBonus: 3
+  IntelligenceBonus: 3
+  VitalityBonus: 3
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  IntelligencePercentBonus: 0
+  VitalityPercentBonus: 0
+  EquipmentType: 1
 --- !u!1 &1734546245
 GameObject:
   m_ObjectHideFlags: 0
@@ -18832,31 +18670,6 @@ MonoBehaviour:
   Image: {fileID: 1767472786}
   AmountText: {fileID: 442952228}
   _item: {fileID: 0}
---- !u!114 &1790378421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: BattleAxe(Clone)
-  m_EditorClassIdentifier: 
-  id: 77ab3b3b54c774a40b2587987e6f2c30
-  Name: BattleAxe
-  Icon: {fileID: 21300000, guid: 42e6c23dca9754a4ba27432be25baa79, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 0
-  AgilityBonus: 0
-  IntelligenceBonus: 0
-  VitalityBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 4
 --- !u!1 &1799953669
 GameObject:
   m_ObjectHideFlags: 0
@@ -20052,31 +19865,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1904661719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Dagger(Clone)
-  m_EditorClassIdentifier: 
-  id: d81d33c3886f23444aa0ee24a6a80788
-  Name: Dagger
-  Icon: {fileID: 21300000, guid: 396c61731bebc0744a5b67e4fe202866, type: 3}
-  MaximumStacks: 1
-  StrengthBonus: 1
-  AgilityBonus: 1
-  IntelligenceBonus: 1
-  VitalityBonus: 1
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  IntelligencePercentBonus: 0
-  VitalityPercentBonus: 0
-  EquipmentType: 5
 --- !u!1 &1908669154
 GameObject:
   m_ObjectHideFlags: 0
@@ -21382,7 +21170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -21421,7 +21209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 2030597128}
   AmountText: {fileID: 1521232572}
-  _item: {fileID: 1376924475}
+  _item: {fileID: 0}
 --- !u!1 &2056538359
 GameObject:
   m_ObjectHideFlags: 0
@@ -22106,7 +21894,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 2
 --- !u!222 &2133306363
 CanvasRenderer:
   m_ObjectHideFlags: 0
