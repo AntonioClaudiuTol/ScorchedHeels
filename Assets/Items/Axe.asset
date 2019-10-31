@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
+  id: 3d09a162a5a22f446bf4cd3866693675
   Name: Axe
-  Icon: {fileID: 21300000, guid: 836f03adfca5fae4da8d0b81d9aa4cc3, type: 3}
+  Icon: {fileID: 21300000, guid: 5f5f60b0e09e3cd4ab400093af0e094c, type: 3}
+  MaximumStacks: 1
   StrengthBonus: 2
   AgilityBonus: 4
   IntelligenceBonus: 5

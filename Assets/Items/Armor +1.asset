@@ -24,4 +24,4 @@ MonoBehaviour:
   AgilityPercentBonus: 0
   IntelligencePercentBonus: 0
   VitalityPercentBonus: 0
-  EquipmentType: 0
+  EquipmentType: 1
