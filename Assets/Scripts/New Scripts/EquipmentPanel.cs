@@ -43,6 +43,7 @@ public class EquipmentPanel : MonoBehaviour
 			{
 				previousItem = (EquippableItem) equipmentSlots[i].Item;
 				equipmentSlots[i].Item = item;
+				equipmentSlots[i].Amount = 1;
 				return true;
 			}
 		}

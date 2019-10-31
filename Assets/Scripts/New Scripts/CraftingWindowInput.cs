@@ -11,7 +11,6 @@ public class CraftingWindowInput : MonoBehaviour
     {
 		if (Input.GetKeyDown(openCraftingWindowKeyCode))
 		{
-			Debug.Log("asdasd");
 			craftingWindow.gameObject.SetActive(!craftingWindow.gameObject.activeSelf);
 		}
 	}
