@@ -18,7 +18,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 			}
 		}
 
-		return freeSpaces > amount;
+		return freeSpaces >= amount;
 	}
 
 	public virtual bool AddItem(Item item)
@@ -89,24 +89,10 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 		int count = 0;
 		for (int i = 0; i < itemSlots.Length; i++)
 		{
-			//if(itemSlots[i].Item == null)
-			//{
-			//	Debug.Log("stuff");
-			//}
-			//if (itemSlots[i].Item.ID == itemID)
-			//{
-			//	count += itemSlots[i].Amount;
-			//}
-
 			Item item = itemSlots[i].Item;
 			if (item != null && item.ID == itemID)
 			{
 				count += itemSlots[i].Amount;
-			}
-			else if (item == null)
-			{
-				Debug.LogWarning("Item is null");
-				Debug.LogWarning("Item id is - " + itemID);
 			}
 		}
 		return count;

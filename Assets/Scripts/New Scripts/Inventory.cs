@@ -42,12 +42,6 @@ public class Inventory : ItemContainer
 		{
 			SetStartingItems();
 		}
-
-		foreach (ItemSlot itemslot in itemSlots)
-		{
-			if(itemslot.Item != null)
-			Debug.Log("Item name: " + itemslot.Item.name + " - Item ID: " + itemslot.Item.ID);
-		}
 	}
 
 	private void SetStartingItems()
