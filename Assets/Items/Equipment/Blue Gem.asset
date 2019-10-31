@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Sword
+  m_Name: Blue Gem
   m_EditorClassIdentifier: 
-  Name: Sword
-  Icon: {fileID: 21300000, guid: 2b656c835492a0b4fb3d39886b88d774, type: 3}
-  StrengthBonus: 7
-  AgilityBonus: 7
-  IntelligenceBonus: 7
-  VitalityBonus: 7
+  id: 9b37173289517fb4981bedb10f8b2f5e
+  Name: Blue Gem
+  Icon: {fileID: 21300000, guid: 26fc75e84dc53f342a36a7619e5c3daf, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 2
+  AgilityBonus: 2
+  IntelligenceBonus: 2
+  VitalityBonus: 2
   StrengthPercentBonus: 0
   AgilityPercentBonus: 0
   IntelligencePercentBonus: 0
   VitalityPercentBonus: 0
-  EquipmentType: 4
+  EquipmentType: 6

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using System.Text;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Items/Item")]
 public class Item : ScriptableObject
 {
 	[SerializeField] string id;
@@ -10,12 +13,16 @@ public class Item : ScriptableObject
 	public Sprite Icon;
 	[Range(1, 999)]
 	public int MaximumStacks = 1;
-	
-	private void OnValidate()
+
+	protected static readonly StringBuilder sb = new StringBuilder();
+
+	#if UNITY_EDITOR
+	protected virtual void OnValidate()
 	{
 		string path = AssetDatabase.GetAssetPath(this);
 		id = AssetDatabase.AssetPathToGUID(path);
 	}
+	#endif
 
 	public virtual Item GetCopy()
 	{
@@ -25,5 +32,15 @@ public class Item : ScriptableObject
 	public virtual void Destroy()
 	{
 		
+	}
+
+	public virtual string GetItemType()
+	{
+		return "";
+	}
+
+	public virtual string GetDescription()
+	{
+		return "";
 	}
 }

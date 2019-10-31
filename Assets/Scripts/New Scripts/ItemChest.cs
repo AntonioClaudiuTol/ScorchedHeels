@@ -20,7 +20,7 @@ public class ItemChest : MonoBehaviour
 		if (spriteRenderer == null)
 			spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-		spriteRenderer.sprite = item.Icon;
+		//spriteRenderer.sprite = item.Icon;
 		spriteRenderer.enabled = false;
 	}
 

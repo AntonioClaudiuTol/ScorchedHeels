@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b32589bbbb5d64da067bbca6d11f6c, type: 3}
-  m_Name: Helmet
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  Name: Helmet
-  Icon: {fileID: 21300000, guid: 1db8dade7b3b2be4c872478c758a7c2f, type: 3}
-  StrengthBonus: 3
-  AgilityBonus: 5
-  IntelligenceBonus: 0
-  VitalityBonus: 3
+  id: 3d9f1d6c05d2b2d4ab1d07d27d34e825
+  Name: Sword
+  Icon: {fileID: 21300000, guid: 2b656c835492a0b4fb3d39886b88d774, type: 3}
+  MaximumStacks: 1
+  StrengthBonus: 7
+  AgilityBonus: 7
+  IntelligenceBonus: 7
+  VitalityBonus: 7
   StrengthPercentBonus: 0
   AgilityPercentBonus: 0
   IntelligencePercentBonus: 0
   VitalityPercentBonus: 0
-  EquipmentType: 0
+  EquipmentType: 4

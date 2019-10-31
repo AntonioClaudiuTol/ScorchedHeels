@@ -11,20 +11,28 @@ public class ItemSlot : BaseItemSlot, IDragHandler, IBeginDragHandler, IEndDragH
 	public event Action<BaseItemSlot> OnEndDragEvent;
 	public event Action<BaseItemSlot> OnDragEvent;
 	public event Action<BaseItemSlot> OnDropEvent;
-	
 
-	public void OnDrag(PointerEventData eventData)
+	private Color dragColor = new Color(1, 1, 1, 0.5f);
+
+	public override bool CanAddStack(Item item, int amount = 1)
 	{
-		if (OnDragEvent != null)
-		{
-			OnDragEvent(this);
-		}
+		return base.CanAddStack(item, amount) && Amount + amount <= item.MaximumStacks;
+	}
+
+	public override bool CanReceiveItem(Item item)
+	{
+		return true;
 	}
 
 	Vector2 originalPosition;
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
+		if(Item != null)
+		{
+			Image.color = dragColor;
+		}
+
 		if (OnBeginDragEvent != null)
 		{
 			OnBeginDragEvent(this);
@@ -33,9 +41,22 @@ public class ItemSlot : BaseItemSlot, IDragHandler, IBeginDragHandler, IEndDragH
 
 	public void OnEndDrag(PointerEventData eventData)
 	{
+		if (Item != null)
+		{
+			Image.color = normalColor;
+		}
+
 		if (OnEndDragEvent != null)
 		{
 			OnEndDragEvent(this);
+		}
+	}
+
+	public void OnDrag(PointerEventData eventData)
+	{
+		if (OnDragEvent != null)
+		{
+			OnDragEvent(this);
 		}
 	}
 

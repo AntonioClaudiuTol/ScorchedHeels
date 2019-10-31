@@ -14,7 +14,7 @@ public enum EquipmentType
 	Accessory2
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Items/Equippable Item")]
 public class EquippableItem : Item
 {
 	public int StrengthBonus;
@@ -82,5 +82,52 @@ public class EquippableItem : Item
 		c.Agility.RemoveAllModifiersFromSource(this);
 		c.Intelligence.RemoveAllModifiersFromSource(this);
 		c.Vitality.RemoveAllModifiersFromSource(this);
+	}
+
+	public override string GetItemType()
+	{
+		return EquipmentType.ToString();
+	}
+
+	public override string GetDescription()
+	{
+		sb.Length = 0;
+		AddStat(StrengthBonus, "Strength");
+		AddStat(AgilityBonus, "Agility");
+		AddStat(IntelligenceBonus, "Intelligence");
+		AddStat(VitalityBonus, "Vitality");
+
+		AddStat(StrengthPercentBonus, "Strength", true);
+		AddStat(AgilityPercentBonus, "Agility", true);
+		AddStat(IntelligencePercentBonus, "Intelligence", true);
+		AddStat(VitalityPercentBonus, "Vitality", true);
+		return sb.ToString();
+	}
+
+	private void AddStat(float value, string statName, bool isPercent = false)
+	{
+		if (value != 0)
+		{
+			if (sb.Length > 0)
+			{
+				sb.AppendLine();
+			}
+			if (value > 0)
+			{
+				sb.Append("+");
+			}
+
+			if (isPercent)
+			{
+				sb.Append(value * 100);
+				sb.Append("% ");
+			}
+			else
+			{
+				sb.Append(value);
+				sb.Append(" ");
+			}
+			sb.Append(statName);
+		}
 	}
 }

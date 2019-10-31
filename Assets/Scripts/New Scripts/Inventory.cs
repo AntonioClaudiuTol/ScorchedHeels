@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Inventory : ItemContainer
 {
-	[SerializeField] List<Item> startingItems;
+	[SerializeField] Item[] startingItems;
 	[SerializeField] Transform itemParent;
 	
 	public event Action<BaseItemSlot> OnPointerEnterEvent;
@@ -21,13 +21,13 @@ public class Inventory : ItemContainer
 	{
 		for (int i = 0; i < itemSlots.Length; i++)
 		{
-			itemSlots[i].OnPointerEnterEvent += OnPointerEnterEvent;
-			itemSlots[i].OnPointerExitEvent += OnPointerExitEvent;
-			itemSlots[i].OnRightClickEvent += OnRightClickEvent;
-			itemSlots[i].OnBeginDragEvent += OnBeginDragEvent;
-			itemSlots[i].OnEndDragEvent += OnEndDragEvent;
-			itemSlots[i].OnDragEvent += OnDragEvent;
-			itemSlots[i].OnDropEvent += OnDropEvent;
+			itemSlots[i].OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
+			itemSlots[i].OnPointerExitEvent += slot => OnPointerExitEvent(slot);
+			itemSlots[i].OnRightClickEvent += slot => OnRightClickEvent(slot);
+			itemSlots[i].OnBeginDragEvent += slot => OnBeginDragEvent(slot);
+			itemSlots[i].OnEndDragEvent += slot => OnEndDragEvent(slot);
+			itemSlots[i].OnDragEvent += slot => OnDragEvent(slot);
+			itemSlots[i].OnDropEvent += slot => OnDropEvent(slot);
 		}
 		SetStartingItems();
 	}
@@ -38,22 +38,25 @@ public class Inventory : ItemContainer
 		{
 			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>();
 		}
+		if (!Application.isPlaying)
+		{
+			SetStartingItems();
+		}
+
+		foreach (ItemSlot itemslot in itemSlots)
+		{
+			if(itemslot.Item != null)
+			Debug.Log("Item name: " + itemslot.Item.name + " - Item ID: " + itemslot.Item.ID);
+		}
 	}
 
 	private void SetStartingItems()
 	{
-		int i = 0;
+		ClearItems();
 
-		for (; i < startingItems.Count && i < itemSlots.Length; i++)
+		foreach (Item item in startingItems)
 		{
-			itemSlots[i].Item = startingItems[i].GetCopy();
-			itemSlots[i].Amount = 1;
-		}
-
-		for (; i < itemSlots.Length; i++)
-		{
-			itemSlots[i].Item = null;
-			itemSlots[i].Amount = 0;
+			AddItem(item.GetCopy());
 		}
 	}
 }
