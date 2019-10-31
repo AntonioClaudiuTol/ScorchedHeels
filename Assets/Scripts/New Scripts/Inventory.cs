@@ -1,43 +1,23 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Serialization;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Inventory : ItemContainer
 {
 	[SerializeField] Item[] startingItems;
 	[SerializeField] Transform itemParent;
 	
-	public event Action<BaseItemSlot> OnPointerEnterEvent;
-	public event Action<BaseItemSlot> OnPointerExitEvent;
-	public event Action<BaseItemSlot> OnRightClickEvent;
-	public event Action<BaseItemSlot> OnBeginDragEvent;
-	public event Action<BaseItemSlot> OnEndDragEvent;
-	public event Action<BaseItemSlot> OnDragEvent;
-	public event Action<BaseItemSlot> OnDropEvent;
-
-	private void Start()
+	protected override void Start()
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
-		{
-			itemSlots[i].OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
-			itemSlots[i].OnPointerExitEvent += slot => OnPointerExitEvent(slot);
-			itemSlots[i].OnRightClickEvent += slot => OnRightClickEvent(slot);
-			itemSlots[i].OnBeginDragEvent += slot => OnBeginDragEvent(slot);
-			itemSlots[i].OnEndDragEvent += slot => OnEndDragEvent(slot);
-			itemSlots[i].OnDragEvent += slot => OnDragEvent(slot);
-			itemSlots[i].OnDropEvent += slot => OnDropEvent(slot);
-		}
+		base.Start();
 		SetStartingItems();
 	}
 
-	private void OnValidate()
+	protected override void OnValidate()
 	{
 		if (itemParent != null)
 		{
-			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>();
+			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true);
 		}
+
 		if (!Application.isPlaying)
 		{
 			SetStartingItems();

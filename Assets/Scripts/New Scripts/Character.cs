@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -209,7 +210,7 @@ public class Character : MonoBehaviour
 
 	public void Unequip(EquippableItem item)
 	{
-		if (!inventory.CanAddItem(item) && equipmentPanel.RemoveItem(item))
+		if (inventory.CanAddItem(item) && equipmentPanel.RemoveItem(item))
 		{
 			item.Unequip(this);
 			statPanel.UpdateStatValues();
@@ -220,5 +221,61 @@ public class Character : MonoBehaviour
 	public void UpdateStatValues()
 	{
 		statPanel.UpdateStatValues();
+	}
+
+	private ItemContainer openItemContainer;
+
+	private void TransferToItemContainer(BaseItemSlot itemSlot)
+	{
+		Item item = itemSlot.Item;
+		if (item != null && openItemContainer.CanAddItem(item))
+		{
+			inventory.RemoveItem(item);
+			openItemContainer.AddItem(item);
+		}
+	}
+
+	private void TransferToInventory(BaseItemSlot itemSlot)
+	{
+		Item item = itemSlot.Item;
+		if (item != null && inventory.CanAddItem(item))
+		{
+			openItemContainer.RemoveItem(item);
+			inventory.AddItem(item);
+		}
+	}
+
+	public void OpenItemContainer(ItemContainer	itemContainer)
+	{
+		openItemContainer = itemContainer;
+
+		inventory.OnRightClickEvent -= InventoryItemRightClickAction;
+		inventory.OnRightClickEvent += TransferToItemContainer;
+
+		itemContainer.OnRightClickEvent += TransferToInventory;
+
+		itemContainer.OnPointerEnterEvent += ShowTooltip;
+		itemContainer.OnPointerExitEvent += HideTooltip;
+		itemContainer.OnBeginDragEvent += BeginDrag;
+		itemContainer.OnEndDragEvent += EndDrag;
+		itemContainer.OnDragEvent += Drag;
+		itemContainer.OnDropEvent += Drop;
+	}
+
+	public void CloseItemContainer(ItemContainer itemContainer)
+	{
+		openItemContainer = null;
+
+		inventory.OnRightClickEvent += InventoryItemRightClickAction;
+		inventory.OnRightClickEvent -= TransferToItemContainer;
+
+		itemContainer.OnRightClickEvent -= TransferToInventory;
+
+		itemContainer.OnPointerEnterEvent -= ShowTooltip;
+		itemContainer.OnPointerExitEvent -= HideTooltip;
+		itemContainer.OnBeginDragEvent -= BeginDrag;
+		itemContainer.OnEndDragEvent -= EndDrag;
+		itemContainer.OnDragEvent -= Drag;
+		itemContainer.OnDropEvent -= Drop;
 	}
 }
