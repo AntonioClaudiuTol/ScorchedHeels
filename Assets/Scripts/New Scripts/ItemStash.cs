@@ -22,7 +22,7 @@ public class ItemStash : ItemContainer
 
 		if (itemParent != null)
 		{
-			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true);
+			itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true, result: itemSlots);
 		}
 
 		//spriteRenderer.enabled = false;

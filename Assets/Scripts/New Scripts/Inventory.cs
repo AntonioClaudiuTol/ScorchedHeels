@@ -15,7 +15,7 @@ public class Inventory : ItemContainer
 	{
 		if (itemParent != null)
 		{
-			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true);
+			itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true, result: itemSlots);
 		}
 
 		if (!Application.isPlaying)

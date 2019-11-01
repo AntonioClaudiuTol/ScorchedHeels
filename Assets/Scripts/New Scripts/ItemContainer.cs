@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class ItemContainer : MonoBehaviour, IItemContainer
 {
-	[SerializeField] protected ItemSlot[] itemSlots;
+	[SerializeField] protected List<ItemSlot> itemSlots;
 
 	public event Action<BaseItemSlot> OnPointerEnterEvent;
 	public event Action<BaseItemSlot> OnPointerExitEvent;
@@ -17,12 +17,12 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	protected virtual void OnValidate()
 	{
-		itemSlots = GetComponentsInChildren<ItemSlot>(includeInactive: true);
+		GetComponentsInChildren<ItemSlot>(includeInactive: true, result: itemSlots);
 	}
 
 	protected virtual void Start()
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			itemSlots[i].OnPointerEnterEvent += slot => OnPointerEnterEvent(slot);
 			itemSlots[i].OnPointerExitEvent += slot => OnPointerExitEvent(slot);
@@ -51,7 +51,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	public virtual bool AddItem(Item item)
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			if (itemSlots[i].CanAddStack(item))
 			{
@@ -61,7 +61,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 			}
 		}
 
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			if (itemSlots[i].Item == null)
 			{
@@ -75,7 +75,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	public virtual bool RemoveItem(Item item)
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			if (itemSlots[i].Item == item)
 			{
@@ -88,7 +88,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	public virtual Item RemoveItem(string itemID)
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			Item item = itemSlots[i].Item;
 			if (item != null && item.ID == itemID)
@@ -102,7 +102,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	public virtual bool ContainsItem(Item item)
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			if (itemSlots[i].Item == item)
 			{
@@ -115,7 +115,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 	public virtual int ItemCount(string itemID)
 	{
 		int count = 0;
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			Item item = itemSlots[i].Item;
 			if (item != null && item.ID == itemID)
@@ -128,7 +128,7 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 
 	public virtual void ClearItems()
 	{
-		for (int i = 0; i < itemSlots.Length; i++)
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
 			itemSlots[i].Item = null;
 		}

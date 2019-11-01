@@ -19,6 +19,8 @@ public class Character : MonoBehaviour
 	[SerializeField] StatPanel statPanel;
 	[SerializeField] ItemTooltip itemTooltip;
 	[SerializeField] Image draggableItem;
+	[SerializeField] DropItemArea dropItemArea;
+	[SerializeField] QuestionDialog questionDialog;
 
 	private BaseItemSlot dragItemSlot;
 
@@ -64,6 +66,7 @@ public class Character : MonoBehaviour
 		// Drop
 		inventory.OnDropEvent += Drop;
 		equipmentPanel.OnDropEvent += Drop;
+		dropItemArea.OndropEvent += DropItemFromInventory;
 	}
 
 	private void InventoryItemRightClickAction(BaseItemSlot itemSlot)
@@ -146,6 +149,26 @@ public class Character : MonoBehaviour
 		{
 			SwapItems(dropItemSlot);
 		}
+	}
+
+	private void DropItemFromInventory()
+	{
+		if(dragItemSlot == null)
+		{
+			return;
+		}
+
+		questionDialog.Show();
+		BaseItemSlot baseItemSlot = dragItemSlot;
+		questionDialog.OnYesEvent += () => DestroyItemInSlot(baseItemSlot);
+
+
+	}
+
+	private void DestroyItemInSlot(BaseItemSlot baseItemSlot)
+	{
+		baseItemSlot.Item.Destroy();
+		baseItemSlot.Item = null;
 	}
 
 	private void SwapItems(BaseItemSlot dropItemSlot)
