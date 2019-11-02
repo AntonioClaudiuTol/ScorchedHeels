@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\locke\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\locke\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ScorchedHeels.-1862022697.00" t="ExcludeRecursive" />
+    <e p="D:\Unity Projects\ScorchedHeels" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="GitHub" t="Include">
+            <e p="Editor" t="Include">
+              <e p="credits.txt" t="Include" />
+              <e p="eula.txt" t="Include" />
+              <e p="ExtensionLoader.cs" t="Include" />
+              <e p="UnityAPIWrapper.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="ButtonHandler.cs" t="Include" />
+          <e p="CraftingButton.cs" t="Include" />
+          <e p="CraftingScript.cs" t="Include" />
+          <e p="CraftSpear.cs" t="Include" />
+          <e p="EatScript.cs" t="Include" />
+          <e p="Gathering.cs" t="Include" />
+          <e p="Loading.cs" t="Include" />
+          <e p="MouseHover.cs" t="Include" />
+          <e p="New Scripts" t="Include">
+            <e p="Character.cs" t="Include" />
+            <e p="CharacterOld.cs" t="Include" />
+            <e p="CharacterStat.cs" t="Include" />
+            <e p="Combat.cs" t="Include" />
+            <e p="Crafting" t="Include">
+              <e p="CraftingRecipe.cs" t="Include" />
+              <e p="CraftingRecipeUI.cs" t="Include" />
+              <e p="CraftingWindow.cs" t="Include" />
+              <e p="CraftingWindowInput.cs" t="Include" />
+            </e>
+            <e p="Dialog" t="Include">
+              <e p="QuestionDialog.cs" t="Include" />
+            </e>
+            <e p="DropItemArea.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="FileIO" t="Include">
+              <e p="FileReadWrite.cs" t="Include" />
+              <e p="ItemDatabase.cs" t="Include" />
+              <e p="ItemSaveData.cs" t="Include" />
+              <e p="ItemSaveIO.cs" t="Include" />
+              <e p="ItemSaveManager.cs" t="Include" />
+            </e>
+            <e p="ForestGlade.cs" t="Include" />
+            <e p="Inventory" t="Include">
+              <e p="EquipmentPanel.cs" t="Include" />
+              <e p="IItemContainer.cs" t="Include" />
+              <e p="Inventory.cs" t="Include" />
+              <e p="InventoryInput.cs" t="Include" />
+              <e p="ItemChest.cs" t="Include" />
+              <e p="ItemContainer.cs" t="Include" />
+              <e p="ItemStash.cs" t="Include" />
+            </e>
+            <e p="Items" t="Include">
+              <e p="BaseItemSlot.cs" t="Include" />
+              <e p="EquipmentSlot.cs" t="Include" />
+              <e p="EquippableItem.cs" t="Include" />
+              <e p="Item.cs" t="Include" />
+              <e p="ItemEffect" t="Include">
+                <e p="HealItemEffect.cs" t="Include" />
+                <e p="StatBuffItemEffect.cs" t="Include" />
+                <e p="UsableItemEffect.cs" t="Include" />
+              </e>
+              <e p="ItemSlot.cs" t="Include" />
+              <e p="UsableItem.cs" t="Include" />
+            </e>
+            <e p="Locations.cs" t="Include" />
+            <e p="Stats" t="Include">
+              <e p="StatDisplay.cs" t="Include" />
+              <e p="StatModifier.cs" t="Include" />
+              <e p="StatPanel.cs" t="Include" />
+            </e>
+            <e p="Tooltip" t="Include">
+              <e p="ItemTooltip.cs" t="Include" />
+              <e p="StatTooltip.cs" t="Include" />
+            </e>
+          </e>
+          <e p="NewGame.cs" t="Include" />
+          <e p="PlayerProgress.cs" t="Include" />
+          <e p="PlotDriver.cs" t="Include" />
+          <e p="QuitGame.cs" t="Include" />
+          <e p="Resources.cs" t="Include" />
+          <e p="Tooltip.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="ScorchedHeels.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

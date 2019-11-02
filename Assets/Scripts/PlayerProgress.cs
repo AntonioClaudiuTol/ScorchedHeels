@@ -137,22 +137,22 @@ public class PlayerProgress: MonoBehaviour
 
     private void showGlade()
     {
-        GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 250, 200, 200), plot2, EditorStyles.wordWrappedLabel);
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 100, 20), "Gather"))
-        {
-            gather();
-        }
+//        GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 250, 200, 200), plot2, EditorStyles.wordWrappedLabel);
+//        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 100, 20), "Gather"))
+//        {
+//            gather();
+//        }
     }
 
     private void showIntro()
     {
-        GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 250, 200, 200), plot1, EditorStyles.wordWrappedLabel);
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 100, 20), "Start"))
-        {
-            hasSeenIntro = true;
-            location = "Glade";
-            startedGame = true;
-        }
+//        GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 250, 200, 200), plot1, EditorStyles.wordWrappedLabel);
+//        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 100, 20), "Start"))
+//        {
+//            hasSeenIntro = true;
+//            location = "Glade";
+//            startedGame = true;
+//        }
     }
 
     private void showBox()
