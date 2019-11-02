@@ -24,6 +24,8 @@ public class Character : MonoBehaviour
 	[SerializeField] ItemSaveManager itemSaveManager;
 
 	private BaseItemSlot dragItemSlot;
+	private ItemContainer openItemContainer;
+	private Enemy target;
 
 	private void OnValidate()
 	{
@@ -37,6 +39,8 @@ public class Character : MonoBehaviour
 	{
 		QualitySettings.vSyncCount = 0;
 		Application.targetFrameRate = 60;
+
+		target = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 	}
 
 	private void Start()
@@ -262,8 +266,6 @@ public class Character : MonoBehaviour
 		statPanel.UpdateStatValues();
 	}
 
-	private ItemContainer openItemContainer;
-
 	private void TransferToItemContainer(BaseItemSlot itemSlot)
 	{
 		Item item = itemSlot.Item;
@@ -316,5 +318,57 @@ public class Character : MonoBehaviour
 		itemContainer.OnEndDragEvent -= EndDrag;
 		itemContainer.OnDragEvent -= Drag;
 		itemContainer.OnDropEvent -= Drop;
+	}
+
+	private int damage = 15;
+	
+	public void DealDamage(int amount)
+	{
+		target.TakeDamage(damage);
+	}
+
+	public void TakeDamage(int damageAmount)
+	{
+		Health -= damageAmount;
+
+		if (Health <= 0)
+		{
+			Die();
+		}
+	}
+
+
+	[SerializeField] Enemy enemy;
+
+	private void Die()
+	{
+		Debug.Log("deaded");
+	}
+
+	private void Update()
+	{
+		Attack();
+	}
+
+	private float attackCooldown = 0f;
+	private float attackSpeed = 0.5f;
+	private void Attack()
+	{
+		if (target == null)
+		{
+			target = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+		}
+
+		if (target == null)
+		{
+			return;
+		}
+		attackCooldown += Time.deltaTime;
+
+		if (attackCooldown >= attackSpeed)
+		{
+			target.TakeDamage(damage);
+			attackCooldown = 0;
+		}
 	}
 }

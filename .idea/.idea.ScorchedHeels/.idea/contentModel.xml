@@ -30,6 +30,9 @@
             <e p="Character.cs" t="Include" />
             <e p="CharacterOld.cs" t="Include" />
             <e p="CharacterStat.cs" t="Include" />
+            <e p="Combat" t="Include">
+              <e p="ICombatant.cs" t="Include" />
+            </e>
             <e p="Combat.cs" t="Include" />
             <e p="Crafting" t="Include">
               <e p="CraftingRecipe.cs" t="Include" />
@@ -73,6 +76,7 @@
               <e p="UsableItem.cs" t="Include" />
             </e>
             <e p="Locations.cs" t="Include" />
+            <e p="Spawner.cs" t="Include" />
             <e p="Stats" t="Include">
               <e p="StatDisplay.cs" t="Include" />
               <e p="StatModifier.cs" t="Include" />
