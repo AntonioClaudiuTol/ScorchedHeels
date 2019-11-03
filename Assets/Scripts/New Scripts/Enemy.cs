@@ -1,19 +1,20 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 public class Enemy : MonoBehaviour, ICombatant
 {
     [SerializeField] string name;
     [SerializeField] int maximumHealth;
-    [SerializeField] int currentHealth;
+    [SerializeField] public int currentHealth;
     [SerializeField] int damage;
     [SerializeField] private float attackSpeed = 0.5f;
     [SerializeField] private float attackCooldown = 0;
     [SerializeField] List<Item> items;
     private Character target;
-    [SerializeField] private Inventory inventory;
     public UnityEvent deathEvent;
     
     public Enemy()
@@ -32,18 +33,33 @@ public class Enemy : MonoBehaviour, ICombatant
 
     private void Update()
     {
-        Attack();
+        if(currentHealth < maximumHealth)
+        {
+            startedCombat = true;
+        }
+
+        if (startedCombat && !startedCoroutine)
+        {
+            StartCoroutine(Combat());
+            startedCoroutine = true;
+        }
     }
+
+    private bool startedCombat = false;
+    private bool startedCoroutine = false;
 
     public void Attack()
     {
-        attackCooldown += Time.deltaTime;
-
-        if (attackCooldown >= attackSpeed)
-        {
-            DealDamage(damage);
-            attackCooldown = 0;
-        }
+//        if (currentHealth < maximumHealth)
+//        {
+//            attackCooldown += Time.deltaTime;
+//
+//            if (attackCooldown >= attackSpeed)
+//            {
+//                DealDamage(damage);
+//                attackCooldown = 0;
+//            }
+//        }
     }
 
     public void DealDamage(int amount)
@@ -65,9 +81,31 @@ public class Enemy : MonoBehaviour, ICombatant
     {
         deathEvent.Invoke();
 
-        target.Inventory.AddItem(items[0]);
-        target.Inventory.AddItem(items[1]);
-        Destroy(gameObject);
+        if(UnityEngine.Random.Range(0, 100) > 25)
+        {
+            target.Inventory.AddItem(items[0]);    
+        }
+        if(UnityEngine.Random.Range(0, 100) > 25)
+        {
+            target.Inventory.AddItem(items[1]);    
+        }
         
+        Destroy(gameObject);
+    }
+    
+    IEnumerator Combat()
+    {
+        while (true)
+        {
+            target.TakeDamage(damage);
+            yield return waitForSeconds;
+        }
+    }
+	
+    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.5f);
+
+    public void StartCombat()
+    {
+        StartCoroutine(Combat());
     }
 }
