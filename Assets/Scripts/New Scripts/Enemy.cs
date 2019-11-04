@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour, ICombatant
     {
         target  = GameObject.FindWithTag("Player").GetComponent<Character>();
         State = EnemyState.Idle;
+
     }
 
     private void Update()
@@ -52,6 +53,20 @@ public class Enemy : MonoBehaviour, ICombatant
         }
     }
 
+    private void OnValidate()
+    {
+//        ThisMethodCallsThatMethod(CombatLog.ThisReturnsAString, "asda");
+    }
+
+    public delegate void DamageDealing(string damage);
+    public static event DamageDealing OnDamageDealt;
+    
+    
+    public static void ThisMethodCallsThatMethod(Action<string> action, string input)
+    {
+       action(input);
+    }
+    
     private bool startedCombat = false;
     private bool startedCoroutine = false;
 
@@ -99,10 +114,18 @@ public class Enemy : MonoBehaviour, ICombatant
 
             if(UnityEngine.Random.Range(0, 100) > 25)
             {
+                if(OnDamageDealt != null)
+                {
+                    OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[0].name + "</color>.");
+                }
                 target.Inventory.AddItem(items[0]);    
             }
             if(UnityEngine.Random.Range(0, 100) > 25)
             {
+                if(OnDamageDealt != null)
+                {
+                    OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[1].name + "</color>.");
+                }
                 target.Inventory.AddItem(items[1]);    
             }
         }
@@ -115,6 +138,10 @@ public class Enemy : MonoBehaviour, ICombatant
         while (true)
         {
             target.TakeDamage(damage);
+            if(OnDamageDealt != null)
+            {
+                OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=blue>" + target.name + "</color>.");
+            }
             yield return waitForSeconds;
         }
     }

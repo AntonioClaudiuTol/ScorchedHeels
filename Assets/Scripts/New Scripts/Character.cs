@@ -28,6 +28,8 @@ public class Character : MonoBehaviour
     private BaseItemSlot dragItemSlot;
     private ItemContainer openItemContainer;
 
+    public delegate void DamageDealt(string damage);
+    public static event DamageDealt OnDamageDealt;
 
     private void OnValidate()
     {
@@ -411,6 +413,11 @@ public class Character : MonoBehaviour
         
         if(attackCooldown >= attackSpeed)
         {
+            if (OnDamageDealt != null)
+            {
+                print("player dmg");
+                OnDamageDealt("<color=blue>" + this.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=yellow>" + target.name + "</color>.");
+            }
             target.TakeDamage(damage);
             attackCooldown = 0f;
             if (target.currentHealth <= 0)
