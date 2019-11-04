@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class Character : MonoBehaviour
 {
@@ -82,12 +83,10 @@ public class Character : MonoBehaviour
         itemSaveManager.LoadInventory(this);
 
         Inventory.ClearItems();
-        AcquireTargets();
-        if(target != null)
-        {
-            Attack();
-        }
+        InitiateCombat();
     }
+
+    
 
 
     private void OnDestroy()
@@ -355,13 +354,23 @@ public class Character : MonoBehaviour
     private void Update()
     {
 //        Attack();
+        if (target == null)
+        {
+            FindNextTarget();
+        }
+        else
+        {
+            Attack();
+        }
+        
+    
         Regenerate(20);
     }
 
     private float regenCD = 0.5f;
     private float currentRegenTimer = 0f;
     private bool startRegen = false;
-    private int maxHealth = 100;
+    public int maxHealth = 100;
 
     private void Regenerate(int i)
     {
@@ -398,54 +407,64 @@ public class Character : MonoBehaviour
 
     private void Attack()
     {
-        StartCombat();
-    }
-
-    IEnumerator Combat()
-    {
-        while (target.currentHealth > 0) /* enemy is alive*/
+        attackCooldown += Time.deltaTime;
+        
+        if(attackCooldown >= attackSpeed)
         {
-            
             target.TakeDamage(damage);
-            yield return waitForSeconds;
-        }
-        if (target.currentHealth < 0)
-        {
-            StopAllCoroutines();
-            enemies.Remove(target);
-            if(enemies.Count > 0)
+            attackCooldown = 0f;
+            if (target.currentHealth <= 0)
             {
-                target = enemies[0];
-                Attack();
+                Debug.Log("enemy died");
+//                CombatManager.RemoveEnemy(target);
+                FindNextTarget();
             }
         }
+        
+//        StartCombat();
     }
 
-    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.5f);
+//    IEnumerator Combat()
+//    {
+//        while (target.currentHealth > 0) /* enemy is alive*/
+//        {
+//            target.TakeDamage(damage);
+//            yield return waitForSeconds;
+//        }
+//        if (target.currentHealth < 0)
+//        {
+//            StopAllCoroutines();
+//        }
+//    }
+//
+//    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.5f);
 
-    private Enemy target;
+    public Enemy target;
 
     public void StartCombat()
     {
-        StartCoroutine(Combat());
+//        StartCoroutine(Combat());
+
+        
     }
 
     private List<Enemy> enemies;
 
-    private void AcquireTargets()
+    private void InitiateCombat()
     {
-        GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
-        enemies = new List<Enemy>();
-        foreach (GameObject gameObject in go)
-        {
-            enemies.Add(gameObject.GetComponent<Enemy>());
-        }
+        target = CombatManager.firstenemy;
 
-        if (enemies.Count > 0)
-        {
-            target = enemies[0];
-        }
+        Attack();
     }
+
+    private void FindNextTarget()
+    {
+//        if (CombatManager.GetNextEnemy() != null)
+//        {
+            target = CombatManager.GetNextEnemy();
+//        }
+    }
+    
 
 
 //    launch combat area -> acquire all enemies -> select first enemy -> attack until dead -> select next enemy
