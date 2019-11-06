@@ -28,8 +28,12 @@ public class Character : MonoBehaviour
     private BaseItemSlot dragItemSlot;
     private ItemContainer openItemContainer;
 
-    public delegate void DamageDealt(string damage);
-    public static event DamageDealt OnDamageDealt;
+    public delegate void ReportDamageDealt(string damage);
+    public static event ReportDamageDealt OnDamageDealt;
+
+    public delegate void DealDamage(int damage);
+
+    public static event DealDamage OnDealDamage;
 
     private void OnValidate()
     {
@@ -328,12 +332,12 @@ public class Character : MonoBehaviour
         itemContainer.OnDropEvent -= Drop;
     }
 
-    private int damage = 15;
+    public int damage = 15;
 
-    public void DealDamage(int amount)
-    {
-        target.TakeDamage(damage);
-    }
+//    public void DealDamage(int amount)
+//    {
+//        target.TakeDamage(damage);
+//    }
 
     public void TakeDamage(int damageAmount)
     {
@@ -360,10 +364,12 @@ public class Character : MonoBehaviour
         {
             FindNextTarget();
         }
-        else
-        {
-            Attack();
-        }
+//        else
+//        {
+//            Attack();
+//        }
+        
+        Attack();
         
     
         Regenerate(20);
@@ -415,17 +421,21 @@ public class Character : MonoBehaviour
         {
             if (OnDamageDealt != null)
             {
-                print("player dmg");
-                OnDamageDealt("<color=blue>" + this.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=yellow>" + target.name + "</color>.");
+                OnDamageDealt("<color=blue>" + this.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=yellow> some enemy" + "</color>.");
             }
-            target.TakeDamage(damage);
-            attackCooldown = 0f;
-            if (target.currentHealth <= 0)
+
+            if (OnDealDamage != null)
             {
-                Debug.Log("enemy died");
-//                CombatManager.RemoveEnemy(target);
-                FindNextTarget();
+                OnDealDamage(damage);
             }
+//            target.TakeDamage(damage);
+            attackCooldown = 0f;
+//            if (target.currentHealth <= 0)
+//            {
+//                Debug.Log("enemy died");
+////                CombatManager.RemoveEnemy(target);
+//                FindNextTarget();
+//            }
         }
         
 //        StartCombat();
@@ -459,16 +469,16 @@ public class Character : MonoBehaviour
 
     private void InitiateCombat()
     {
-        target = CombatManager.firstenemy;
-
-        Attack();
+//        target = CombatManager.firstenemy;
+//
+//        Attack();
     }
 
     private void FindNextTarget()
     {
 //        if (CombatManager.GetNextEnemy() != null)
 //        {
-            target = CombatManager.GetNextEnemy();
+//            target = CombatManager.GetNextEnemy();
 //        }
     }
     

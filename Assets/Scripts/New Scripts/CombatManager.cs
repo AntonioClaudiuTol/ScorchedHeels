@@ -5,13 +5,54 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
+    [SerializeField] private Character player;
     [SerializeField] private static List<Enemy> enemies;
 
     private void OnValidate()
     {
         AcquireTargets();
     }
+
+    private void OnEnable()
+    {
+        Character.OnDealDamage += PassDamageInformationToEnemy;
+        Enemy.OnDealDamage += PassDamageInformationToPlayer;
+        Enemy.OnEnemyDeath += RemoveEnemy;
+    }
+
+    private void OnDisable()
+    {
+        Character.OnDealDamage -= PassDamageInformationToEnemy;
+        Enemy.OnDealDamage -= PassDamageInformationToPlayer;
+        Enemy.OnEnemyDeath -= RemoveEnemy;
+    }
+
+    private void PassDamageInformationToEnemy(int damage)
+    {
+        if (enemies.Count > 0)
+        {
+            Debug.Log("Current target is: " + enemies[0].name);
+            enemies[0].TakeDamage(damage);
+        }
+    }
     
+    private void PassDamageInformationToPlayer(int damage)
+    {
+        player.TakeDamage(damage);
+    }
+
+    private void RemoveEnemy()
+    {
+        if (enemies.Count > 0)
+        {
+            if (enemies.Count > 1)
+            Debug.Log(enemies[0].name + " died. Current target is: " + enemies[1].name);
+            Enemy oldEnemy = enemies[0];
+            enemies.Remove(enemies[0]);
+            Destroy(oldEnemy.gameObject);
+        }
+    }
+
     private void AcquireTargets()
     {
         GameObject[] go = GameObject.FindGameObjectsWithTag("Enemy");
@@ -24,7 +65,6 @@ public class CombatManager : MonoBehaviour
         enemies.Sort((enemy, enemy1) => String.Compare(enemy.name, enemy1.name));
         firstenemy = enemies[0];
     }
-
 
     public static Enemy firstenemy;
 
@@ -54,9 +94,4 @@ public class CombatManager : MonoBehaviour
 
         return null;
     }
-    
-//    player si current enemy hp text si bars
-//        
-//        list of enemies
-//    vreau combat log in care sa vad damage si drops
 }

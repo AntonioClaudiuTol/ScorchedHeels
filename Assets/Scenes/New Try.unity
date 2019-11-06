@@ -18434,15 +18434,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'TODO:
 
-    1: The first dungeon(contains 5 enemies, 1 boss that kills you easily unless you
+    1: start and end combat buttons.
+
+    2: The first dungeon(contains 5 enemies, 1 boss that kills you easily unless you
     craft all other items and the boss drops 1 rare gem used for crafting and one
     guaranteed item used to unlock a game mechanic)
-
-    2: UI HP bars for me and the enemy(DONE)
-
-    3: Combat log which includes attacks and drops
-
-    4: start and end combat buttons.
 
     5: display possible drops with shadows and reveal them once they are unlocked
 
@@ -26436,6 +26432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cafc8068c0100418bb054eca621be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2089171575}
 --- !u!4 &1671761213
 Transform:
   m_ObjectHideFlags: 0
@@ -28559,7 +28556,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1766160530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28601,7 +28598,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1613881115}
   m_HandleRect: {fileID: 1613881114}
-  m_Direction: 2
+  m_Direction: 3
   m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
@@ -30010,9 +30007,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 600714034}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 0
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -36328,6 +36325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Health
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988473281375319138, guid: bd57691e34fe7614f874fe9d843f0cd6,
+        type: 3}
+      propertyPath: damage
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1988473281375319139, guid: bd57691e34fe7614f874fe9d843f0cd6,
         type: 3}

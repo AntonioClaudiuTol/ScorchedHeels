@@ -13,14 +13,14 @@ public class CombatLog : MonoBehaviour
 
     private void OnEnable()
     {
-        Character.OnDamageDealt += ThisReturnsAString;
-        Enemy.OnDamageDealt += ThisReturnsAString;
+        Character.OnDamageDealt += LogCombatEvent;
+        Enemy.OnDamageDealt += LogCombatEvent;
     }
 
     private void OnDisable()
     {
-        Character.OnDamageDealt -= ThisReturnsAString;
-        Enemy.OnDamageDealt -= ThisReturnsAString;
+        Character.OnDamageDealt -= LogCombatEvent;
+        Enemy.OnDamageDealt -= LogCombatEvent;
     }
 
     private void Awake()
@@ -30,7 +30,7 @@ public class CombatLog : MonoBehaviour
 
     }
 
-    public void ThisReturnsAString(string damage)
+    public void LogCombatEvent(string damage)
     {
         sb.AppendLine(damage);
         combatLog.text = sb.ToString();

@@ -10,7 +10,7 @@ public enum EnemyState
     Idle,
     Attacking
 }
-public class Enemy : MonoBehaviour, ICombatant
+public class Enemy : MonoBehaviour
 {
     [SerializeField] string name;
     [SerializeField] public int maximumHealth;
@@ -29,8 +29,19 @@ public class Enemy : MonoBehaviour, ICombatant
         maximumHealth = 50;
         currentHealth = maximumHealth;
         damage = 10;
-        
     }
+
+    private void OnEnable()
+    {
+//        Character.OnDamageDealt += TakeDamage()
+    }
+
+    private void OnDisable()
+    {
+//        Character.OnDamageDealt -= 
+    }
+    
+    
 
     private void Awake()
     {
@@ -60,6 +71,15 @@ public class Enemy : MonoBehaviour, ICombatant
 
     public delegate void DamageDealing(string damage);
     public static event DamageDealing OnDamageDealt;
+
+    public delegate void DealDamage(int damage);
+
+    public static event DealDamage OnDealDamage;
+    
+    public delegate void EnemyDeath();
+
+    public static event EnemyDeath OnEnemyDeath;
+        
     
     
     public static void ThisMethodCallsThatMethod(Action<string> action, string input)
@@ -84,10 +104,10 @@ public class Enemy : MonoBehaviour, ICombatant
 //        }
     }
 
-    public void DealDamage(int amount)
-    {
-        target.Health -= amount;
-    }
+//    public void DealDamage(int amount)
+//    {
+//        target.Health -= amount;
+//    }
 
     public void TakeDamage(int damageAmount)
     {
@@ -114,6 +134,10 @@ public class Enemy : MonoBehaviour, ICombatant
 
             if(UnityEngine.Random.Range(0, 100) > 25)
             {
+                if (OnDealDamage != null)
+                {
+                    OnDealDamage(damage);
+                }
                 if(OnDamageDealt != null)
                 {
                     OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[0].name + "</color>.");
@@ -128,6 +152,13 @@ public class Enemy : MonoBehaviour, ICombatant
                 }
                 target.Inventory.AddItem(items[1]);    
             }
+
+            if (OnEnemyDeath != null)
+            {
+                OnEnemyDeath();
+//                Destroy(gameObject);
+            }
+            
         }
         
 //        Destroy(gameObject);
