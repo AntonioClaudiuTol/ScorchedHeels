@@ -18436,7 +18436,9 @@ MonoBehaviour:
 
     1: start and end combat buttons.
 
-    2: The first dungeon(contains 5 enemies, 1 boss that kills you easily unless you
+    2: make combat log scroll to the bottom after another entry is added
+
+    3: The first dungeon(contains 5 enemies, 1 boss that kills you easily unless you
     craft all other items and the boss drops 1 rare gem used for crafting and one
     guaranteed item used to unlock a game mechanic)
 
