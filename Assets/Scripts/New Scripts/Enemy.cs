@@ -57,6 +57,8 @@ public class Enemy : MonoBehaviour
             State = EnemyState.Attacking;
         }
 
+        State = EnemyState.Idle;
+
         if (State == EnemyState.Attacking && !startedCoroutine)
         {
             StartCoroutine(Combat());

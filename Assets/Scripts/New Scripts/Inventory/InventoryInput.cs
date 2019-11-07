@@ -13,17 +13,7 @@ public class InventoryInput : MonoBehaviour
 		{
 			if(Input.GetKeyDown(toggleCharacterPanelKeys[i]))
 			{
-				characterPanelGameObject.SetActive(!characterPanelGameObject.activeSelf);
-
-				if(characterPanelGameObject.activeSelf)
-				{
-					equipmentPanelGameObject.SetActive(true);
-					ShowMouseCursor();
-				}
-				else
-				{
-					HideMouseCursor();
-				}
+				ToggleEquipmentPanelFull();
 				break;
 			}
 		}
@@ -32,36 +22,37 @@ public class InventoryInput : MonoBehaviour
 		{
 			if (Input.GetKeyDown(toggleInventoryKeys[i]))
 			{
-				if(!characterPanelGameObject.activeSelf)
-				{
-					characterPanelGameObject.SetActive(true);
-					equipmentPanelGameObject.SetActive(false);
-					ShowMouseCursor();
-				}
-				else if(equipmentPanelGameObject.activeSelf)
-				{
-					equipmentPanelGameObject.SetActive(false);
-				}
-				else
-				{
-					characterPanelGameObject.SetActive(false);
-					HideMouseCursor();
-				}
+				ToggleInventory();
 				break;
 			}
 		}
 	}
 
-	public void ShowMouseCursor()
+	public void ToggleEquipmentPanelFull()
 	{
-//		Cursor.visible = true;
-//		Cursor.lockState = CursorLockMode.None;
+		characterPanelGameObject.SetActive(!characterPanelGameObject.activeSelf);
+
+		if (characterPanelGameObject.activeSelf)
+		{
+			equipmentPanelGameObject.SetActive(true);
+		}
 	}
 
-	public void HideMouseCursor()
+	public void ToggleInventory()
 	{
-//		Cursor.visible = false;
-//		Cursor.lockState = CursorLockMode.Locked;
+		if (!characterPanelGameObject.activeSelf)
+		{
+			characterPanelGameObject.SetActive(true);
+			equipmentPanelGameObject.SetActive(false);
+		}
+		else if (equipmentPanelGameObject.activeSelf)
+		{
+			equipmentPanelGameObject.SetActive(false);
+		}
+		else
+		{
+			characterPanelGameObject.SetActive(false);
+		}
 	}
 
 	public void ToggleEquipmentPanel()

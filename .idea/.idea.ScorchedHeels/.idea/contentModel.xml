@@ -94,6 +94,8 @@
           <e p="PlotDriver.cs" t="Include" />
           <e p="QuitGame.cs" t="Include" />
           <e p="Resources.cs" t="Include" />
+          <e p="Scavenge.cs" t="Include" />
+          <e p="StartGame.cs" t="Include" />
           <e p="Tooltip.cs" t="Include" />
         </e>
       </e>

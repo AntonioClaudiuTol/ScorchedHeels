@@ -15,12 +15,16 @@ public class CombatLog : MonoBehaviour
     {
         Character.OnDamageDealt += LogCombatEvent;
         Enemy.OnDamageDealt += LogCombatEvent;
+        StartGame.OnLogAction += LogCombatEvent;
+        Scavenge.OnLogAction += LogCombatEvent;
     }
 
     private void OnDisable()
     {
         Character.OnDamageDealt -= LogCombatEvent;
         Enemy.OnDamageDealt -= LogCombatEvent;
+        StartGame.OnLogAction -= LogCombatEvent;
+        Scavenge.OnLogAction -= LogCombatEvent;
     }
 
     private void Awake()

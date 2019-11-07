@@ -368,8 +368,11 @@ public class Character : MonoBehaviour
 //        {
 //            Attack();
 //        }
-        
-        Attack();
+        combatState = CombatState.Stopped;
+        if (combatState == CombatState.Started)
+        {
+            Attack();
+        }
         
     
         Regenerate(20);

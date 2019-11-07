@@ -11,7 +11,12 @@ public class CraftingWindowInput : MonoBehaviour
     {
 		if (Input.GetKeyDown(openCraftingWindowKeyCode))
 		{
-			craftingWindow.gameObject.SetActive(!craftingWindow.gameObject.activeSelf);
+			OpenCraftingWindow();
 		}
 	}
+
+    private void OpenCraftingWindow()
+    {
+	    craftingWindow.gameObject.SetActive(!craftingWindow.gameObject.activeSelf);
+    }
 }
