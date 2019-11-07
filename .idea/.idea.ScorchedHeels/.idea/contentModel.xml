@@ -18,7 +18,6 @@
         <e p="Scripts" t="Include">
           <e p="ButtonHandler.cs" t="Include" />
           <e p="CraftingButton.cs" t="Include" />
-          <e p="CraftingScript.cs" t="Include" />
           <e p="CraftSpear.cs" t="Include" />
           <e p="EatScript.cs" t="Include" />
           <e p="Gathering.cs" t="Include" />
@@ -44,7 +43,9 @@
               <e p="QuestionDialog.cs" t="Include" />
             </e>
             <e p="DropItemArea.cs" t="Include" />
+            <e p="Dungeon.cs" t="Include" />
             <e p="Enemy.cs" t="Include" />
+            <e p="Exploration.cs" t="Include" />
             <e p="FileIO" t="Include">
               <e p="FileReadWrite.cs" t="Include" />
               <e p="ItemDatabase.cs" t="Include" />
@@ -79,6 +80,7 @@
             </e>
             <e p="Locations.cs" t="Include" />
             <e p="Spawner.cs" t="Include" />
+            <e p="StartCombat.cs" t="Include" />
             <e p="Stats" t="Include">
               <e p="StatDisplay.cs" t="Include" />
               <e p="StatModifier.cs" t="Include" />
@@ -88,6 +90,7 @@
               <e p="ItemTooltip.cs" t="Include" />
               <e p="StatTooltip.cs" t="Include" />
             </e>
+            <e p="WindowManager.cs" t="Include" />
           </e>
           <e p="NewGame.cs" t="Include" />
           <e p="PlayerProgress.cs" t="Include" />

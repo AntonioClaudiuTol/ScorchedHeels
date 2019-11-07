@@ -368,7 +368,8 @@ public class Character : MonoBehaviour
 //        {
 //            Attack();
 //        }
-        combatState = CombatState.Stopped;
+//        combatState = CombatState.Stopped;
+Debug.Log("Combat state is: " + combatState);
         if (combatState == CombatState.Started)
         {
             Attack();
@@ -408,13 +409,13 @@ public class Character : MonoBehaviour
     private float attackCooldown = 0f;
     private float attackSpeed = 0.5f;
 
-    private enum CombatState
+    public enum CombatState
     {
         Started,
         Stopped
     }
 
-    private CombatState combatState = CombatState.Stopped;
+    public CombatState combatState = CombatState.Stopped;
 
     private void Attack()
     {

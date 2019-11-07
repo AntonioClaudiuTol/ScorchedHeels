@@ -10,6 +10,7 @@ public class CombatLog : MonoBehaviour
     [SerializeField] public Text combatLog;
     private static StringBuilder sb;
     public delegate void DamageDealt(string damage);
+    
 
     private void OnEnable()
     {
@@ -38,5 +39,10 @@ public class CombatLog : MonoBehaviour
     {
         sb.AppendLine(damage);
         combatLog.text = sb.ToString();
+    }
+
+    public static void LogCombatEventStatic(string message)
+    {
+        sb.AppendLine(message);
     }
 }

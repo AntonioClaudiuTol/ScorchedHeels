@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eba25ff4139e514f9446aaca7170f0d, type: 3}
+  m_Name: Makeshift Torch
+  m_EditorClassIdentifier: 
+  Materials:
+  - Item: {fileID: 11400000, guid: f8f195055c682a346866547463ce57bc, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: e1809d255d7407f429c3389f6aa31e58, type: 2}
+    Amount: 1
+  Results:
+  - Item: {fileID: 11400000, guid: 9f7bdf8f1528351458d789199e7000b8, type: 2}
+    Amount: 1

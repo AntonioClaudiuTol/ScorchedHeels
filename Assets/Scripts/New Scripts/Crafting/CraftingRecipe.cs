@@ -75,6 +75,10 @@ public class CraftingRecipe : ScriptableObject
 		{
 			for (int i = 0; i < itemAmount.Amount; i++)
 			{
+				if (itemAmount.Item.ID == "9f7bdf8f1528351458d789199e7000b8")
+				{
+					WindowManager.isExplorationUnlocked = true;
+				}
 				itemContainer.AddItem(itemAmount.Item.GetCopy());
 			}
 		}

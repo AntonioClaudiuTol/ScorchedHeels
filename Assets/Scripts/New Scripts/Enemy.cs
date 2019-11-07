@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] List<Item> items;
     private Character target;
     public UnityEvent deathEvent;
-    public EnemyState State;
+    public EnemyState State = EnemyState.Idle;
     
     public Enemy()
     {
@@ -52,12 +52,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth < maximumHealth)
-        {
-            State = EnemyState.Attacking;
-        }
+//        if(currentHealth < maximumHealth)
+//        {
+//            State = EnemyState.Attacking;
+//        }
 
-        State = EnemyState.Idle;
+//        State = EnemyState.Idle;
 
         if (State == EnemyState.Attacking && !startedCoroutine)
         {
