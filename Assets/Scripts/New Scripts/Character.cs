@@ -34,6 +34,10 @@ public class Character : MonoBehaviour
     public delegate void DealDamage(int damage);
 
     public static event DealDamage OnDealDamage;
+    
+    public delegate void CharacterDeath();
+
+    public static event CharacterDeath OnDeath;
 
     private void OnValidate()
     {
@@ -354,7 +358,13 @@ public class Character : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("deaded");
+        if (OnDeath != null)
+        {
+            OnDeath();
+        }
+
+        combatState = CombatState.Stopped;
+        CombatLog.LogCombatEventStatic("Player Died.");
     }
 
     private void Update()
@@ -369,14 +379,13 @@ public class Character : MonoBehaviour
 //            Attack();
 //        }
 //        combatState = CombatState.Stopped;
-Debug.Log("Combat state is: " + combatState);
         if (combatState == CombatState.Started)
         {
             Attack();
         }
         
     
-        Regenerate(20);
+//        Regenerate(20);
     }
 
     private float regenCD = 0.5f;

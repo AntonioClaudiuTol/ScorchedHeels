@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackCooldown = 0;
     [SerializeField] List<Item> items;
     private Character target;
-    public UnityEvent deathEvent;
     public EnemyState State = EnemyState.Idle;
     
     public Enemy()
@@ -30,18 +29,6 @@ public class Enemy : MonoBehaviour
         currentHealth = maximumHealth;
         damage = 10;
     }
-
-    private void OnEnable()
-    {
-//        Character.OnDamageDealt += TakeDamage()
-    }
-
-    private void OnDisable()
-    {
-//        Character.OnDamageDealt -= 
-    }
-    
-    
 
     private void Awake()
     {
@@ -59,6 +46,10 @@ public class Enemy : MonoBehaviour
 
 //        State = EnemyState.Idle;
 
+        if (State == EnemyState.Idle)
+        {
+            StopAllCoroutines();
+        }
         if (State == EnemyState.Attacking && !startedCoroutine)
         {
             StartCoroutine(Combat());
@@ -66,10 +57,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnValidate()
-    {
-//        ThisMethodCallsThatMethod(CombatLog.ThisReturnsAString, "asda");
-    }
 
     public delegate void DamageDealing(string damage);
     public static event DamageDealing OnDamageDealt;
@@ -120,8 +107,20 @@ public class Enemy : MonoBehaviour
             currentHealth = 0;
             Die();
         }
-        
     }
+    
+    
+    /// <summary>
+    ///
+    ///
+    /// enemy has stats
+    /// enemy spawns
+    /// enemy attacks
+    /// enemy dies
+    /// enemy drops items
+    /// 
+    /// </summary>
+    
 
     private bool died = false;
 
@@ -132,8 +131,9 @@ public class Enemy : MonoBehaviour
             died = true;
             State = EnemyState.Idle;
             StopAllCoroutines();
-            deathEvent.Invoke();
 
+            CombatLog.LogCombatEventStatic(gameObject.name + " has died.");
+            
             if(UnityEngine.Random.Range(0, 100) > 25)
             {
                 if (OnDealDamage != null)
@@ -155,6 +155,7 @@ public class Enemy : MonoBehaviour
                 target.Inventory.AddItem(items[1]);    
             }
 
+            
             if (OnEnemyDeath != null)
             {
                 OnEnemyDeath();
@@ -180,9 +181,4 @@ public class Enemy : MonoBehaviour
     }
 	
     private WaitForSeconds waitForSeconds = new WaitForSeconds(0.5f);
-
-    public void StartCombat()
-    {
-        StartCoroutine(Combat());
-    }
 }

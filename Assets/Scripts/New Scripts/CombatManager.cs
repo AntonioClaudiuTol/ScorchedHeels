@@ -18,20 +18,23 @@ public class CombatManager : MonoBehaviour
         Character.OnDealDamage += PassDamageInformationToEnemy;
         Enemy.OnDealDamage += PassDamageInformationToPlayer;
         Enemy.OnEnemyDeath += RemoveEnemy;
+        Character.OnDeath += StopCombat;
     }
+
+    
 
     private void OnDisable()
     {
         Character.OnDealDamage -= PassDamageInformationToEnemy;
         Enemy.OnDealDamage -= PassDamageInformationToPlayer;
         Enemy.OnEnemyDeath -= RemoveEnemy;
+        Character.OnDeath += StopCombat;
     }
 
     private void PassDamageInformationToEnemy(int damage)
     {
         if (enemies.Count > 0)
         {
-            Debug.Log("Current target is: " + enemies[0].name);
             enemies[0].TakeDamage(damage);
         }
     }
@@ -46,11 +49,17 @@ public class CombatManager : MonoBehaviour
         if (enemies.Count > 0)
         {
             if (enemies.Count > 1)
-            Debug.Log(enemies[0].name + " died. Current target is: " + enemies[1].name);
+                Debug.Log(enemies[0].name + " died. Current target is: " + enemies[1].name);
             Enemy oldEnemy = enemies[0];
             enemies.Remove(enemies[0]);
             Destroy(oldEnemy.gameObject);
+            StartCombat();
         }
+    }
+    
+    private void StopCombat()
+    {
+        enemies[0].State = EnemyState.Idle;
     }
 
     private void AcquireTargets()
@@ -77,7 +86,7 @@ public class CombatManager : MonoBehaviour
             
         if (enemies.Count > 0)
         {
-            enemies[0].State = EnemyState.Attacking;
+//            enemies[0].State = EnemyState.Attacking;
             return enemies[0];
         }
 
@@ -88,10 +97,18 @@ public class CombatManager : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
-            enemies[0].State = EnemyState.Attacking;
+//            enemies[0].State = EnemyState.Attacking;
             return enemies[0];
         }
 
         return null;
+    }
+
+    public static void StartCombat()
+    {
+        if(enemies.Count > 0)
+        {
+            enemies[0].State = EnemyState.Attacking;
+        }
     }
 }

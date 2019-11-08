@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CombatLog : MonoBehaviour
 {
+    [SerializeField] public static CombatLog combatLogObject;
     [SerializeField] public Text combatLog;
     private static StringBuilder sb;
     public delegate void DamageDealt(string damage);
@@ -32,7 +33,7 @@ public class CombatLog : MonoBehaviour
     {
         sb = new StringBuilder();
         sb.Length = 0;
-
+        combatLogObject = GameObject.Find("Combat Manager").GetComponent<CombatLog>();
     }
 
     public void LogCombatEvent(string damage)
@@ -44,5 +45,6 @@ public class CombatLog : MonoBehaviour
     public static void LogCombatEventStatic(string message)
     {
         sb.AppendLine(message);
+        combatLogObject.combatLog.text = sb.ToString();
     }
 }
