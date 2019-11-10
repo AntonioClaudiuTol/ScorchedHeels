@@ -48,8 +48,8 @@ public class CombatManager : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
-            if (enemies.Count > 1)
-                Debug.Log(enemies[0].name + " died. Current target is: " + enemies[1].name);
+//            if (enemies.Count > 1)
+//                Debug.Log(enemies[0].name + " died. Current target is: " + enemies[1].name);
             Enemy oldEnemy = enemies[0];
             enemies.Remove(enemies[0]);
             Destroy(oldEnemy.gameObject);

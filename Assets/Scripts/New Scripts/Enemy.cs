@@ -70,12 +70,6 @@ public class Enemy : MonoBehaviour
     public static event EnemyDeath OnEnemyDeath;
         
     
-    
-    public static void ThisMethodCallsThatMethod(Action<string> action, string input)
-    {
-       action(input);
-    }
-    
     private bool startedCombat = false;
     private bool startedCoroutine = false;
 
