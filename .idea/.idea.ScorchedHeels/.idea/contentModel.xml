@@ -81,6 +81,7 @@
             </e>
             <e p="LocationPanelToggle.cs" t="Include" />
             <e p="Locations.cs" t="Include" />
+            <e p="ScavengingUpgrades.cs" t="Include" />
             <e p="StartCombat.cs" t="Include" />
             <e p="Stats" t="Include">
               <e p="StatDisplay.cs" t="Include" />

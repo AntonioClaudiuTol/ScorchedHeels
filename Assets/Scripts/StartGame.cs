@@ -8,14 +8,14 @@ public class StartGame : MonoBehaviour
 {
     public delegate void LogAction(string message);
     public static event LogAction OnLogAction;
-    public Button scavengeButton;
+    public GameObject scavengeButton;
 
     private string message = "You wake up with a skullsplitting headache. Your vision is blurry and you have no idea where you are. Wait a minute, you don't even know WHO you are.";
     
     public void StartGameAction()
     {
         LogEvent(message);
-        scavengeButton.gameObject.SetActive(true);
+        scavengeButton.SetActive(true);
         Destroy(gameObject);
         
     }

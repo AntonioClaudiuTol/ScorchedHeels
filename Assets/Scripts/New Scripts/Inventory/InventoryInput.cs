@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class InventoryInput : MonoBehaviour
 {
@@ -6,6 +7,14 @@ public class InventoryInput : MonoBehaviour
 	[SerializeField] GameObject equipmentPanelGameObject;
 	[SerializeField] KeyCode[] toggleCharacterPanelKeys;
 	[SerializeField] KeyCode[] toggleInventoryKeys;
+
+	private void Awake()
+	{
+		ToggleEquipmentPanelFull();
+		ToggleEquipmentPanelFull();
+		ToggleInventory();
+		ToggleInventory();
+	}
 
 	void Update()
     {
