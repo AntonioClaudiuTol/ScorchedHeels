@@ -31,7 +31,6 @@ public class ItemStash : ItemContainer
 	protected override void Awake()
 	{
 		base.Awake();
-		itemParent.gameObject.SetActive(false);
 
 		character = GameObject.FindWithTag("Player").GetComponent<Character>();
 	}

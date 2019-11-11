@@ -8,13 +8,6 @@ public class InventoryInput : MonoBehaviour
 	[SerializeField] KeyCode[] toggleCharacterPanelKeys;
 	[SerializeField] KeyCode[] toggleInventoryKeys;
 
-	private void Awake()
-	{
-		ToggleEquipmentPanelFull();
-		ToggleEquipmentPanelFull();
-		ToggleInventory();
-		ToggleInventory();
-	}
 
 	void Update()
     {

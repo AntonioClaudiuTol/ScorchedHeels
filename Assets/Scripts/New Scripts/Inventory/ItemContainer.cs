@@ -99,6 +99,21 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 		}
 		return null;
 	}
+	
+	public virtual bool RemoveItem(string itemID, int amount)
+	{
+		
+		for (int i = 0; i < ItemSlots.Count; i++)
+		{
+			Item item = ItemSlots[i].Item;
+			if (item != null && item.ID == itemID && ItemSlots[i].Amount >= amount)
+			{
+				ItemSlots[i].Amount -= amount;
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public virtual bool ContainsItem(Item item)
 	{
