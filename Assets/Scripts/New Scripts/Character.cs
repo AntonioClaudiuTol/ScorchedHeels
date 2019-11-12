@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 
 public class Character : MonoBehaviour
 {
-    public int Health = 100;
+    public float Health = 100;
 
-    public CharacterStat Strength;
-    public CharacterStat Agility;
-    public CharacterStat Intelligence;
-    public CharacterStat Vitality;
+    public CharacterStat Damage;
+    public CharacterStat Defense;
+    public CharacterStat HPRegen;
 
     public Inventory Inventory;
     public EquipmentPanel EquipmentPanel;
@@ -25,12 +26,13 @@ public class Character : MonoBehaviour
     private ItemContainer openItemContainer;
 
     public delegate void ReportDamageDealt(string damage);
+
     public static event ReportDamageDealt OnDamageDealt;
 
-    public delegate void DealDamage(int damage);
+    public delegate void DealDamage(float damage);
 
     public static event DealDamage OnDealDamage;
-    
+
     public delegate void CharacterDeath();
 
     public static event CharacterDeath OnDeath;
@@ -56,7 +58,7 @@ public class Character : MonoBehaviour
             itemTooltip = FindObjectOfType<ItemTooltip>();
         }
 
-        statPanel.SetStats(Strength, Agility, Intelligence, Vitality);
+        statPanel.SetStats(Damage, Defense, HPRegen);
         statPanel.UpdateStatValues();
 
         // Setup Events:
@@ -89,11 +91,7 @@ public class Character : MonoBehaviour
         itemSaveManager.LoadInventory(this);
 
         Inventory.ClearItems();
-        InitiateCombat();
     }
-
-    
-
 
     private void OnDestroy()
     {
@@ -332,25 +330,18 @@ public class Character : MonoBehaviour
         itemContainer.OnDropEvent -= Drop;
     }
 
-    public int damage = 15;
+    public float damage = 15;
 
-//    public void DealDamage(int amount)
-//    {
-//        target.TakeDamage(damage);
-//    }
-
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         Health -= damageAmount;
 
         if (Health <= 0)
         {
+            Health = 0;
             Die();
         }
     }
-
-
-    [SerializeField] Enemy enemy;
 
     private void Die()
     {
@@ -365,51 +356,19 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-//        Attack();
-        if (target == null)
-        {
-            FindNextTarget();
-        }
-//        else
-//        {
-//            Attack();
-//        }
-//        combatState = CombatState.Stopped;
         if (combatState == CombatState.Started)
         {
+            InitStats();
             Attack();
         }
-        
-    
-//        Regenerate(20);
     }
 
-    private float regenCD = 0.5f;
-    private float currentRegenTimer = 0f;
-    private bool startRegen = false;
-    public int maxHealth = 100;
-
-    private void Regenerate(int i)
+    private void InitStats()
     {
-        if (Health <= 0)
-        {
-            startRegen = true;
-        }
-
-        if (startRegen)
-        {
-            currentRegenTimer += Time.deltaTime;
-            if (currentRegenTimer >= regenCD)
-            {
-                Health += i;
-                currentRegenTimer = 0;
-                if (Health > maxHealth)
-                {
-                    startRegen = false;
-                }
-            }
-        }
+        damage = Damage.Value;
     }
+
+    public int maxHealth = 100;
 
     private float attackCooldown = 0f;
     private float attackSpeed = 0.5f;
@@ -425,73 +384,21 @@ public class Character : MonoBehaviour
     private void Attack()
     {
         attackCooldown += Time.deltaTime;
-        
-        if(attackCooldown >= attackSpeed)
+
+        if (attackCooldown >= attackSpeed)
         {
             if (OnDamageDealt != null)
             {
-                OnDamageDealt("<color=blue>" + this.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=yellow> some enemy" + "</color>.");
+                OnDamageDealt("<color=blue>" + this.name + "</color> has dealt <color=red>" + damage.ToString() +
+                              "</color> damage to <color=yellow> some enemy" + "</color>.");
             }
 
             if (OnDealDamage != null)
             {
                 OnDealDamage(damage);
             }
-//            target.TakeDamage(damage);
+
             attackCooldown = 0f;
-//            if (target.currentHealth <= 0)
-//            {
-//                Debug.Log("enemy died");
-////                CombatManager.RemoveEnemy(target);
-//                FindNextTarget();
-//            }
         }
-        
-//        StartCombat();
     }
-
-//    IEnumerator Combat()
-//    {
-//        while (target.currentHealth > 0) /* enemy is alive*/
-//        {
-//            target.TakeDamage(damage);
-//            yield return waitForSeconds;
-//        }
-//        if (target.currentHealth < 0)
-//        {
-//            StopAllCoroutines();
-//        }
-//    }
-//
-//    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.5f);
-
-    public Enemy target;
-
-    public void StartCombat()
-    {
-//        StartCoroutine(Combat());
-
-        
-    }
-
-    private List<Enemy> enemies;
-
-    private void InitiateCombat()
-    {
-//        target = CombatManager.firstenemy;
-//
-//        Attack();
-    }
-
-    private void FindNextTarget()
-    {
-//        if (CombatManager.GetNextEnemy() != null)
-//        {
-//            target = CombatManager.GetNextEnemy();
-//        }
-    }
-    
-
-
-//    launch combat area -> acquire all enemies -> select first enemy -> attack until dead -> select next enemy
 }

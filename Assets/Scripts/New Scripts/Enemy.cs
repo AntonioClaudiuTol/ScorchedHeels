@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public enum EnemyState
@@ -12,10 +13,17 @@ public enum EnemyState
 }
 public class Enemy : MonoBehaviour
 {
+    public CharacterStat Damage;
+    public CharacterStat Defense;
+    public CharacterStat HPRegen;
+    
+    [SerializeField] StatPanel statPanel;
+    [SerializeField] private HealthBarEnemy healthBar;
+    [SerializeField] private Text nameDisplay;
     [SerializeField] string name;
-    [SerializeField] public int maximumHealth;
-    [SerializeField] public int currentHealth;
-    [SerializeField] int damage;
+    [SerializeField] public float maximumHealth;
+    [SerializeField] public float currentHealth;
+    [SerializeField] float damage;
     [SerializeField] private float attackSpeed = 0.5f;
     [SerializeField] private float attackCooldown = 0;
     [SerializeField] List<Item> items;
@@ -34,7 +42,23 @@ public class Enemy : MonoBehaviour
     {
         target  = GameObject.FindWithTag("Player").GetComponent<Character>();
         State = EnemyState.Idle;
+        InitStats();
+        healthBar.UpdateValues(currentHealth, maximumHealth);
+        statPanel.SetStats(Damage, Defense, HPRegen);
+        statPanel.UpdateStatValues();
+        UpdateName();
+    }
 
+    private void UpdateName()
+    {
+        nameDisplay.text = name;
+    }
+
+    private void InitStats()
+    {
+        maximumHealth = Damage.Value * 10;
+        currentHealth = maximumHealth;
+        damage = Damage.Value;
     }
 
     private void Update()
@@ -52,6 +76,9 @@ public class Enemy : MonoBehaviour
         }
         if (State == EnemyState.Attacking && !startedCoroutine)
         {
+            healthBar.UpdateValues(currentHealth, maximumHealth);
+            statPanel.SetStats(Damage, Defense, HPRegen);
+            statPanel.UpdateStatValues();
             StartCoroutine(Combat());
             startedCoroutine = true;
         }
@@ -61,7 +88,7 @@ public class Enemy : MonoBehaviour
     public delegate void DamageDealing(string damage);
     public static event DamageDealing OnDamageDealt;
 
-    public delegate void DealDamage(int damage);
+    public delegate void DealDamage(float damage);
 
     public static event DealDamage OnDealDamage;
     
@@ -92,9 +119,10 @@ public class Enemy : MonoBehaviour
 //        target.Health -= amount;
 //    }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
+        healthBar.UpdateValues(currentHealth, maximumHealth);
 
         if (currentHealth <= 0)
         {

@@ -49,7 +49,7 @@ public class StatPanel : MonoBehaviour
 	{
 		for (int i = 0; i < statNames.Length; i++)
 		{
-			statDisplays[i].Name = statNames[i];
+			statDisplays[i].Name = statNames[i].Substring(0, 1).ToUpper() + statNames[i].Substring(1);
 		}
 	}
 }

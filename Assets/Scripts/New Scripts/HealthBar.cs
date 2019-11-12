@@ -16,6 +16,12 @@ public class HealthBar : MonoBehaviour
         healthBar.transform.localScale = new Vector3((float) character.Health / character.maxHealth, 1f, 1f);
     }
 
+    private void Awake()
+    {
+        healthBar = GetComponentsInChildren<Image>()[1];
+        healthAmount = GetComponentInChildren<Text>();
+    }
+
     private void Update()
     {
         healthAmount.text = character.Health + "/" + character.maxHealth;

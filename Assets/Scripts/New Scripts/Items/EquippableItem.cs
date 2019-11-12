@@ -17,15 +17,13 @@ public enum EquipmentType
 [CreateAssetMenu(menuName = "Items/Equippable Item")]
 public class EquippableItem : Item
 {
-	public int StrengthBonus;
-	public int AgilityBonus;
-	public int IntelligenceBonus;
-	public int VitalityBonus;
+	public int DamageBonus;
+	public int DefenseBonus;
+	public int HPRegenBonus;
 	[Space]
-	public float StrengthPercentBonus;
-	public float AgilityPercentBonus;
-	public float IntelligencePercentBonus;
-	public float VitalityPercentBonus;
+	public float DamagePercentBonus;
+	public float DefensePercentBonus;
+	public float HPRegenPercentBonus;
 	[Space]
 	public EquipmentType EquipmentType;
 
@@ -41,47 +39,38 @@ public class EquippableItem : Item
 
 	public void Equip(Character c)
 	{
-		if(StrengthBonus != 0)
+		if(DamageBonus != 0)
 		{
-			c.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat, this));
+			c.Damage.AddModifier(new StatModifier(DamageBonus, StatModType.Flat, this));
 		}
-		if (AgilityBonus != 0)
+		if (DefenseBonus != 0)
 		{
-			c.Agility.AddModifier(new StatModifier(AgilityBonus, StatModType.Flat, this));
+			c.Defense.AddModifier(new StatModifier(DefenseBonus, StatModType.Flat, this));
 		}
-		if (IntelligenceBonus != 0)
+		if (HPRegenBonus != 0)
 		{
-			c.Intelligence.AddModifier(new StatModifier(IntelligenceBonus, StatModType.Flat, this));
-		}
-		if (VitalityBonus != 0)
-		{
-			c.Vitality.AddModifier(new StatModifier(VitalityBonus, StatModType.Flat, this));
+			c.HPRegen.AddModifier(new StatModifier(HPRegenBonus, StatModType.Flat, this));
 		}
 
-		if (StrengthPercentBonus != 0)
+		if (DamagePercentBonus != 0)
 		{
-			c.Strength.AddModifier(new StatModifier(StrengthPercentBonus, StatModType.PercentMult, this));
+			c.Damage.AddModifier(new StatModifier(DamagePercentBonus, StatModType.PercentMult, this));
 		}
-		if (AgilityPercentBonus != 0)
+		if (DefensePercentBonus != 0)
 		{
-			c.Agility.AddModifier(new StatModifier(AgilityPercentBonus, StatModType.PercentMult, this));
+			c.Defense.AddModifier(new StatModifier(DefensePercentBonus, StatModType.PercentMult, this));
 		}
-		if (IntelligencePercentBonus != 0)
+		if (HPRegenPercentBonus != 0)
 		{
-			c.Intelligence.AddModifier(new StatModifier(IntelligencePercentBonus, StatModType.PercentMult, this));
-		}
-		if (VitalityPercentBonus != 0)
-		{
-			c.Vitality.AddModifier(new StatModifier(VitalityPercentBonus, StatModType.PercentMult, this));
+			c.HPRegen.AddModifier(new StatModifier(HPRegenPercentBonus, StatModType.PercentMult, this));
 		}
 	}
 
 	public void Unequip(Character c)
 	{
-		c.Strength.RemoveAllModifiersFromSource(this);
-		c.Agility.RemoveAllModifiersFromSource(this);
-		c.Intelligence.RemoveAllModifiersFromSource(this);
-		c.Vitality.RemoveAllModifiersFromSource(this);
+		c.Damage.RemoveAllModifiersFromSource(this);
+		c.Defense.RemoveAllModifiersFromSource(this);
+		c.HPRegen.RemoveAllModifiersFromSource(this);
 	}
 
 	public override string GetItemType()
@@ -92,15 +81,13 @@ public class EquippableItem : Item
 	public override string GetDescription()
 	{
 		sb.Length = 0;
-		AddStat(StrengthBonus, "Strength");
-		AddStat(AgilityBonus, "Agility");
-		AddStat(IntelligenceBonus, "Intelligence");
-		AddStat(VitalityBonus, "Vitality");
+		AddStat(DamageBonus, "Damage");
+		AddStat(DefenseBonus, "Defense");
+		AddStat(HPRegenBonus, "HPRegen");
 
-		AddStat(StrengthPercentBonus, "Strength", true);
-		AddStat(AgilityPercentBonus, "Agility", true);
-		AddStat(IntelligencePercentBonus, "Intelligence", true);
-		AddStat(VitalityPercentBonus, "Vitality", true);
+		AddStat(DamagePercentBonus, "Damage", true);
+		AddStat(DefensePercentBonus, "Defense", true);
+		AddStat(HPRegenPercentBonus, "HPRegen", true);
 		return sb.ToString();
 	}
 

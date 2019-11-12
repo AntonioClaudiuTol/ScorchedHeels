@@ -27,10 +27,15 @@ public class PaneController : MonoBehaviour
 
     private void Awake()
     {
-//        foreach (var pane in panes)
-//        {
-//            pane.SetActive(false);
-//        }
+        foreach (var pane in panes)
+        {
+            pane.SetActive(true);
+            pane.SetActive(false);
+        }
+        
+//        panes[0].SetActive(true);
+        panes[4].SetActive(true);
+
     }
 
     private void ActivatePane(int paneNumber)

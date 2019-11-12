@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\locke\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\locke\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ScorchedHeels.-1862022697.00" t="ExcludeRecursive" />
-    <e p="D:\Unity Projects\ScorchedHeels" t="IncludeRecursive">
+    <e p="C:\Unity\ScorchedHeels" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -28,7 +26,6 @@
           <e p="New Scripts" t="Include">
             <e p="BaseEntity.cs" t="Include" />
             <e p="Character.cs" t="Include" />
-            <e p="CharacterOld.cs" t="Include" />
             <e p="CharacterStat.cs" t="Include" />
             <e p="Combat" t="Include">
               <e p="ICombatant.cs" t="Include" />
@@ -95,6 +92,7 @@
               <e p="ItemTooltip.cs" t="Include" />
               <e p="StatTooltip.cs" t="Include" />
             </e>
+            <e p="UpgradeStatTemp.cs" t="Include" />
             <e p="WindowManager.cs" t="Include" />
           </e>
           <e p="NewGame.cs" t="Include" />
@@ -112,5 +110,7 @@
       <e p="ScorchedHeels.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Antonio\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Antonio\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ScorchedHeels.-2142901982.00" t="ExcludeRecursive" />
   </component>
 </project>
