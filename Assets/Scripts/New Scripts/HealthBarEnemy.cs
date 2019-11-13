@@ -27,7 +27,7 @@ public class HealthBarEnemy : MonoBehaviour
 
     public void UpdateValues(float currentHealth, float maximumHealth)
     {
-        healthAmount.text = currentHealth + "/" + maximumHealth;
+        healthAmount.text = (currentHealth >= 0 ? currentHealth : 0) + "/" + maximumHealth;
         if (currentHealth >= 0)
         {
             healthBar.transform.localScale = new Vector3(currentHealth / maximumHealth, 1f, 1f);

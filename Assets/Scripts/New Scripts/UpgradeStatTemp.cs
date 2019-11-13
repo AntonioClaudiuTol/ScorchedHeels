@@ -20,5 +20,7 @@ public class UpgradeStatTemp : MonoBehaviour
         character.Damage.BaseValue += 1;
         character.Defense.BaseValue += 1;
         character.HPRegen.BaseValue += 1;
+        character.UpdateStats();
+        character.TakeDamage(0);
     }
 }

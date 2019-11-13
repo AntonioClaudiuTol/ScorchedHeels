@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +7,16 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Character character;
     [SerializeField] private Image healthBar;
     [SerializeField] private Text healthAmount;
+
+    private void OnEnable()
+    {
+        Character.OnHealthUpdate += UpdateHealthDisplay;
+    }
+
+    private void OnDisable()
+    {
+        Character.OnHealthUpdate -= UpdateHealthDisplay;
+    }
 
     private void OnValidate()
     {
@@ -21,8 +29,8 @@ public class HealthBar : MonoBehaviour
         healthBar = GetComponentsInChildren<Image>()[1];
         healthAmount = GetComponentInChildren<Text>();
     }
-
-    private void Update()
+    
+    public void UpdateHealthDisplay()
     {
         healthAmount.text = character.Health + "/" + character.maxHealth;
         if (character.Health >= 0)

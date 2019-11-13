@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Dungeon : MonoBehaviour
@@ -9,6 +10,8 @@ public class Dungeon : MonoBehaviour
     [SerializeField] private GameObject combatPanel;
     [SerializeField] private List<Enemy> enemies;
     [SerializeField] private List<Enemy> enemyPrefabs;
+    public List<Enemy> oldEnemies;
+    private Enemy enemyTemp;
 
 
     private void Awake()
@@ -17,6 +20,8 @@ public class Dungeon : MonoBehaviour
         {
             enemies.Add(enemy.GetComponent<Enemy>());
         }
+
+        oldEnemies = new List<Enemy>();
     }
 
     public void OpenDungeonMenu()
@@ -26,14 +31,20 @@ public class Dungeon : MonoBehaviour
 
     public void ResetDungeon()
     {
-        enemies.Clear();
-        foreach (var enemyPrefab in enemyPrefabs)
-        {
-            Instantiate(enemyPrefab);
-        }
         foreach (var enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            enemies.Add(enemy.GetComponent<Enemy>());
+            Destroy(enemy);
         }
+
+        enemies = null;
+        enemies = new List<Enemy>();
+
+        foreach (var enemyPrefab in enemyPrefabs)
+        {
+            enemies.Add(Instantiate(enemyPrefab).GetComponent<Enemy>());
+        }
+
+        CombatManager.enemies = enemies;
+        //TODO: Stop combat and restore player to full health after a dungeon reset.
     }
 }

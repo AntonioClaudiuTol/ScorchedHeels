@@ -36,6 +36,10 @@ public class Character : MonoBehaviour
     public delegate void CharacterDeath();
 
     public static event CharacterDeath OnDeath;
+    
+    public delegate void HealthUpdate();
+
+    public static event HealthUpdate OnHealthUpdate;
 
     private void OnValidate()
     {
@@ -49,6 +53,12 @@ public class Character : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
+    }
+    
+    public void UpdateStats()
+    {
+        statPanel.SetStats(Damage, Defense, HPRegen);
+        statPanel.UpdateStatValues();
     }
 
     private void Start()
@@ -335,7 +345,10 @@ public class Character : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         Health -= damageAmount;
-
+        if (OnHealthUpdate != null)
+        {
+            OnHealthUpdate();
+        }
         if (Health <= 0)
         {
             Health = 0;

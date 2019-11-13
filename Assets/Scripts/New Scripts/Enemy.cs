@@ -43,9 +43,12 @@ public class Enemy : MonoBehaviour
         target  = GameObject.FindWithTag("Player").GetComponent<Character>();
         State = EnemyState.Idle;
         InitStats();
+        healthBar = GameObject.Find("Health Bar Enemy").GetComponent<HealthBarEnemy>();
         healthBar.UpdateValues(currentHealth, maximumHealth);
+        statPanel = GameObject.Find("Enemy Panel").GetComponentInChildren<StatPanel>();
         statPanel.SetStats(Damage, Defense, HPRegen);
         statPanel.UpdateStatValues();
+        nameDisplay = GameObject.Find("Enemy Name").GetComponent<Text>();
         UpdateName();
     }
 
@@ -76,6 +79,7 @@ public class Enemy : MonoBehaviour
         }
         if (State == EnemyState.Attacking && !startedCoroutine)
         {
+            UpdateName();
             healthBar.UpdateValues(currentHealth, maximumHealth);
             statPanel.SetStats(Damage, Defense, HPRegen);
             statPanel.UpdateStatValues();

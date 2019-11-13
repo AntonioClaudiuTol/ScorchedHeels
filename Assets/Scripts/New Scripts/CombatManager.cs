@@ -6,7 +6,7 @@ using UnityEngine;
 public class CombatManager : MonoBehaviour
 {
     [SerializeField] private Character player;
-    [SerializeField] private static List<Enemy> enemies;
+    [SerializeField] public static List<Enemy> enemies;
 
     private void OnValidate()
     {
