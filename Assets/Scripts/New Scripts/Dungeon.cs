@@ -8,6 +8,7 @@ using UnityEngine;
 public class Dungeon : MonoBehaviour
 {
     [SerializeField] private GameObject combatPanel;
+    [SerializeField] private Character player;
     [SerializeField] private List<Enemy> enemies;
     [SerializeField] private List<Enemy> enemyPrefabs;
     public List<Enemy> oldEnemies;
@@ -22,6 +23,7 @@ public class Dungeon : MonoBehaviour
         }
 
         oldEnemies = new List<Enemy>();
+        player = GameObject.FindWithTag("Player").GetComponent<Character>();
     }
 
     public void OpenDungeonMenu()
@@ -45,6 +47,6 @@ public class Dungeon : MonoBehaviour
         }
 
         CombatManager.enemies = enemies;
-        //TODO: Stop combat and restore player to full health after a dungeon reset.
+        player.Health = player.maxHealth;
     }
 }

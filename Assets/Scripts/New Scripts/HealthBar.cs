@@ -20,8 +20,8 @@ public class HealthBar : MonoBehaviour
 
     private void OnValidate()
     {
-        healthAmount.text = character.Health + "/" + character.maxHealth;
-        healthBar.transform.localScale = new Vector3((float) character.Health / character.maxHealth, 1f, 1f);
+        healthAmount.text = character.Health.ToString("F0") + "/" + character.maxHealth;
+        healthBar.transform.localScale = new Vector3(character.Health / character.maxHealth, 1f, 1f);
     }
 
     private void Awake()
@@ -32,10 +32,10 @@ public class HealthBar : MonoBehaviour
     
     public void UpdateHealthDisplay()
     {
-        healthAmount.text = character.Health + "/" + character.maxHealth;
+        healthAmount.text = character.Health.ToString("F0") + "/" + character.maxHealth;
         if (character.Health >= 0)
         {
-            healthBar.transform.localScale = new Vector3((float) character.Health / character.maxHealth, 1f, 1f);
+            healthBar.transform.localScale = new Vector3(character.Health / character.maxHealth, 1f, 1f);
         }
     }
 }

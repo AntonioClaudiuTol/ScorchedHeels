@@ -206,5 +206,5 @@ public class Enemy : MonoBehaviour
         }
     }
 	
-    private WaitForSeconds waitForSeconds = new WaitForSeconds(0.5f);
+    private WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
 }

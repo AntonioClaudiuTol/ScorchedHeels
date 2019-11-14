@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     [SerializeField] DropItemArea dropItemArea;
     [SerializeField] QuestionDialog questionDialog;
     [SerializeField] ItemSaveManager itemSaveManager;
+    [SerializeField] private Death death;
 
     private BaseItemSlot dragItemSlot;
     private ItemContainer openItemContainer;
@@ -36,7 +37,7 @@ public class Character : MonoBehaviour
     public delegate void CharacterDeath();
 
     public static event CharacterDeath OnDeath;
-    
+
     public delegate void HealthUpdate();
 
     public static event HealthUpdate OnHealthUpdate;
@@ -53,8 +54,9 @@ public class Character : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
+        death.Die();
     }
-    
+
     public void UpdateStats()
     {
         statPanel.SetStats(Damage, Defense, HPRegen);
@@ -349,12 +351,14 @@ public class Character : MonoBehaviour
         {
             OnHealthUpdate();
         }
+
         if (Health <= 0)
         {
             Health = 0;
             Die();
         }
     }
+
 
     private void Die()
     {
@@ -373,6 +377,35 @@ public class Character : MonoBehaviour
         {
             InitStats();
             Attack();
+            if (Health < maxHealth && Health > 0 && !regenIsActive)
+            {
+                regenIsActive = true;
+            }
+            else
+            {
+                regenIsActive = false;
+            }
+
+            if (regenIsActive)
+            {
+                RegenHP(HPRegen.Value);
+            }
+        }
+    }
+
+    private bool regenIsActive = false;
+    private float second = 1000;
+    private float timePassed = 0;
+    private float amountRegenerated = 0;
+
+
+    public void RegenHP(float hpRegenAmount)
+    {
+        amountRegenerated = hpRegenAmount * Time.deltaTime;
+        Health += amountRegenerated;
+        if (OnHealthUpdate != null)
+        {
+            OnHealthUpdate();
         }
     }
 
