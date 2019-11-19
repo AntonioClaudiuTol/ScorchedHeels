@@ -24,6 +24,7 @@ public class Dungeon : MonoBehaviour
 
         oldEnemies = new List<Enemy>();
         player = GameObject.FindWithTag("Player").GetComponent<Character>();
+        ResetDungeon();
     }
 
     public void OpenDungeonMenu()

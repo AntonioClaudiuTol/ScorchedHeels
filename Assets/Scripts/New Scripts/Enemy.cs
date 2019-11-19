@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public CharacterStat Damage;
     public CharacterStat Defense;
     public CharacterStat HPRegen;
-    
+
     [SerializeField] StatPanel statPanel;
     [SerializeField] private HealthBarEnemy healthBar;
     [SerializeField] private Text nameDisplay;
@@ -30,14 +30,6 @@ public class Enemy : MonoBehaviour
     private Character target;
     public EnemyState State = EnemyState.Idle;
     
-    public Enemy()
-    {
-        name = "Enemy";
-        maximumHealth = 50;
-        currentHealth = maximumHealth;
-        damage = 10;
-    }
-
     private void Awake()
     {
         target  = GameObject.FindWithTag("Player").GetComponent<Character>();
@@ -77,14 +69,13 @@ public class Enemy : MonoBehaviour
         {
             StopAllCoroutines();
         }
-        if (State == EnemyState.Attacking && !startedCoroutine)
+        if (State == EnemyState.Attacking)
         {
             UpdateName();
             healthBar.UpdateValues(currentHealth, maximumHealth);
             statPanel.SetStats(Damage, Defense, HPRegen);
             statPanel.UpdateStatValues();
-            StartCoroutine(Combat());
-            startedCoroutine = true;
+            Attack();
         }
     }
 
@@ -104,25 +95,6 @@ public class Enemy : MonoBehaviour
     private bool startedCombat = false;
     private bool startedCoroutine = false;
 
-    public void Attack()
-    {
-//        if (currentHealth < maximumHealth)
-//        {
-//            attackCooldown += Time.deltaTime;
-//
-//            if (attackCooldown >= attackSpeed)
-//            {
-//                DealDamage(damage);
-//                attackCooldown = 0;
-//            }
-//        }
-    }
-
-//    public void DealDamage(int amount)
-//    {
-//        target.Health -= amount;
-//    }
-
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
@@ -134,21 +106,10 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-    
-    
-    /// <summary>
-    ///
-    ///
-    /// enemy has stats
-    /// enemy spawns
-    /// enemy attacks
-    /// enemy dies
-    /// enemy drops items
-    /// 
-    /// </summary>
-    
 
     private bool died = false;
+    
+    private float itemDropChanceReduction = 0f;
 
     private void Die()
     {
@@ -159,52 +120,85 @@ public class Enemy : MonoBehaviour
             StopAllCoroutines();
 
             CombatLog.LogCombatEventStatic(gameObject.name + " has died.");
+
+            foreach (var item in items)
+            {
+                if(UnityEngine.Random.Range(0, 100) < 25 / (1 + itemDropChanceReduction))
+                {
+                    itemDropChanceReduction++;
+                    if (OnDealDamage != null)
+                    {
+                        OnDealDamage(damage);
+                    }
+                    if(OnDamageDealt != null)
+                    {
+                        OnDamageDealt("<color=yellow>" + gameObject.name + "</color> dropped a <color=green>" + item.name + "</color>.");
+                    }
+                    target.Inventory.AddItem(item);    
+                }
+            }
             
-            if(UnityEngine.Random.Range(0, 100) > 25)
-            {
-                if (OnDealDamage != null)
-                {
-                    OnDealDamage(damage);
-                }
-                if(OnDamageDealt != null)
-                {
-                    OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[0].name + "</color>.");
-                }
-                target.Inventory.AddItem(items[0]);    
-            }
-            if(UnityEngine.Random.Range(0, 100) > 25)
-            {
-                if(OnDamageDealt != null)
-                {
-                    OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[1].name + "</color>.");
-                }
-                target.Inventory.AddItem(items[1]);    
-            }
+//            if(UnityEngine.Random.Range(0, 100) > 25)
+//            {
+//                if (OnDealDamage != null)
+//                {
+//                    OnDealDamage(damage);
+//                }
+//                if(OnDamageDealt != null)
+//                {
+//                    OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[0].name + "</color>.");
+//                }
+//                target.Inventory.AddItem(items[0]);    
+//            }
+//            if(UnityEngine.Random.Range(0, 100) > 25)
+//            {
+//                if(OnDamageDealt != null)
+//                {
+//                    OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> dropped a <color=green>" + items[1].name + "</color>.");
+//                }
+//                target.Inventory.AddItem(items[1]);    
+//            }
 
             
             if (OnEnemyDeath != null)
             {
                 OnEnemyDeath();
-//                Destroy(gameObject);
             }
-            
         }
-        
-//        Destroy(gameObject);
     }
     
-    IEnumerator Combat()
+//    IEnumerator Combat()
+//    {
+//        while (true)
+//        {
+//            target.TakeDamage(damage);
+//            if(OnDamageDealt != null)
+//            {
+//                OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=blue>" + target.name + "</color>.");
+//            }
+//            yield return waitForSeconds;
+//        }
+//    }
+    
+    private void Attack()
     {
-        while (true)
+        attackCooldown += Time.deltaTime;
+
+        if (attackCooldown >= attackSpeed)
         {
-            target.TakeDamage(damage);
-            if(OnDamageDealt != null)
+            if (OnDamageDealt != null)
             {
-                OnDamageDealt("<color=yellow>" + this.gameObject.name + "</color> has dealt <color=red>" + damage.ToString() + "</color> damage to <color=blue>" + target.name + "</color>.");
+                OnDamageDealt("<color=blue>" + this.name + "</color> has dealt <color=red>" + damage.ToString() +
+                              "</color> damage to <color=yellow> some enemy" + "</color>.");
             }
-            yield return waitForSeconds;
+
+            if (OnDealDamage != null)
+            {
+                OnDealDamage(damage);
+            }
+
+            attackCooldown = 0f;
         }
     }
-	
-    private WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
+
 }

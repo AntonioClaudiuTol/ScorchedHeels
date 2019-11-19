@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3316276618778413232}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 789.046, y: 533.3375, z: -161.0395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -53,10 +53,10 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   nameDisplay: {fileID: 0}
   name: Rat God
-  maximumHealth: 20
-  currentHealth: 20
-  damage: 2
-  attackSpeed: 1
+  maximumHealth: 30
+  currentHealth: 30
+  damage: 3
+  attackSpeed: 1.5
   attackCooldown: 0
   items:
   - {fileID: 11400000, guid: f15e22fa46bff7b429d2c90f4c8edc81, type: 2}

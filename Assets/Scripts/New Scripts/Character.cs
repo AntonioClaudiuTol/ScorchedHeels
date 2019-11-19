@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
 {
     public float Health = 100;
 
+    public CharacterStat HHealth;
     public CharacterStat Damage;
     public CharacterStat Defense;
     public CharacterStat HPRegen;
@@ -54,7 +55,6 @@ public class Character : MonoBehaviour
     {
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
-        death.Die();
     }
 
     public void UpdateStats()
@@ -248,9 +248,16 @@ public class Character : MonoBehaviour
         dropItemSlot.Amount += stacksToAdd;
         dragItemSlot.Amount -= stacksToAdd;
     }
+    
+    
+    public void UpgradeHealth()
+    {
+        maxHealth = Damage.Value * 10f;
+    }
 
     public void Equip(EquippableItem item)
     {
+        
         if (Inventory.RemoveItem(item))
         {
             EquippableItem previousItem;
@@ -271,6 +278,8 @@ public class Character : MonoBehaviour
                 Inventory.AddItem(item);
             }
         }
+
+        UpgradeHealth();
     }
 
     public void Unequip(EquippableItem item)
@@ -281,6 +290,8 @@ public class Character : MonoBehaviour
             statPanel.UpdateStatValues();
             Inventory.AddItem(item);
         }
+
+        UpgradeHealth();
     }
 
     public void UpdateStatValues()
@@ -347,6 +358,7 @@ public class Character : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         Health -= damageAmount;
+        totalDmg += damageAmount;
         if (OnHealthUpdate != null)
         {
             OnHealthUpdate();
@@ -362,6 +374,7 @@ public class Character : MonoBehaviour
 
     private void Die()
     {
+        print("Dmg taken: " + totalDmg + " , HP Regen: " + totalRegen);
         if (OnDeath != null)
         {
             OnDeath();
@@ -388,21 +401,37 @@ public class Character : MonoBehaviour
 
             if (regenIsActive)
             {
+                TickTock();
                 RegenHP(HPRegen.Value);
             }
         }
     }
 
+    private void TickTock()
+    {
+        cnt += Time.deltaTime;
+        if (cnt >= oneSec)
+        {
+            cnt = 0;
+        }
+    }
+
+    private float oneSec = 1f;
+    private float cnt = 0f;
+
     private bool regenIsActive = false;
-    private float second = 1000;
     private float timePassed = 0;
     private float amountRegenerated = 0;
-
+    private float amRegPersec = 0f;
+    private float totalRegen = 0f;
+    private float totalDmg = 0f;
 
     public void RegenHP(float hpRegenAmount)
     {
         amountRegenerated = hpRegenAmount * Time.deltaTime;
+        amRegPersec += amountRegenerated;
         Health += amountRegenerated;
+        totalRegen += amountRegenerated;
         if (OnHealthUpdate != null)
         {
             OnHealthUpdate();
@@ -414,7 +443,7 @@ public class Character : MonoBehaviour
         damage = Damage.Value;
     }
 
-    public int maxHealth = 100;
+    public float maxHealth = 100;
 
     private float attackCooldown = 0f;
     private float attackSpeed = 0.5f;

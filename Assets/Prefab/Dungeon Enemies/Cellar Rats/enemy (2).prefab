@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8288733397000091033}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 789.046, y: 533.3375, z: -161.0395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -56,9 +56,11 @@ MonoBehaviour:
   maximumHealth: 20
   currentHealth: 20
   damage: 2
-  attackSpeed: 1
+  attackSpeed: 2
   attackCooldown: 0
   items:
-  - {fileID: 11400000, guid: f15e22fa46bff7b429d2c90f4c8edc81, type: 2}
-  - {fileID: 11400000, guid: e1809d255d7407f429c3389f6aa31e58, type: 2}
+  - {fileID: 11400000, guid: d485965eefb3062438af00df35eee3e6, type: 2}
+  - {fileID: 11400000, guid: 1ec5f1240f314ec40ae78dabfdc7c627, type: 2}
+  - {fileID: 11400000, guid: 3d9f1d6c05d2b2d4ab1d07d27d34e825, type: 2}
+  - {fileID: 11400000, guid: 2e71df6663d3121469f68678587fe886, type: 2}
   State: 0

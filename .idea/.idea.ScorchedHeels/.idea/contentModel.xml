@@ -83,6 +83,7 @@
             <e p="Locations.cs" t="Include" />
             <e p="PaneController.cs" t="Include" />
             <e p="ScavengingUpgrades.cs" t="Include" />
+            <e p="SkillBarController.cs" t="Include" />
             <e p="StartCombat.cs" t="Include" />
             <e p="Stats" t="Include">
               <e p="StatDisplay.cs" t="Include" />

@@ -30,12 +30,8 @@ public class PaneController : MonoBehaviour
         foreach (var pane in panes)
         {
             pane.SetActive(true);
-            pane.SetActive(false);
+//            pane.SetActive(false);
         }
-        
-//        panes[0].SetActive(true);
-        panes[4].SetActive(true);
-
     }
 
     private void ActivatePane(int paneNumber)

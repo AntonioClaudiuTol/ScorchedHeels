@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8564946259534850728}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 789.046, y: 533.3375, z: -161.0395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -55,7 +55,7 @@ MonoBehaviour:
   name: Strongest Rat
   maximumHealth: 20
   currentHealth: 20
-  damage: 2
+  damage: 1.5
   attackSpeed: 1
   attackCooldown: 0
   items:
